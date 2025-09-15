@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luvix - Contáctanos</title>
+    <style>
+        :root {
+            --primary-purple: #6d28d9;
+            --primary-purple-dark: #5b21b6;
+            --primary-purple-darker: #4c1d95;
+            --primary-purple-light: #8b5cf6;
+            --primary-purple-lighter: #a78bfa;
+            --white: #ffffff;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--gray-50);
+            color: var(--gray-800);
+            line-height: 1.6;
+        }
+
+        /* Navegacion */
+        .navbar {
+            background-color: var(--primary-purple);
+            color: var(--white);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo-inner {
+            width: 2.5rem;
+            height: 2.5rem;         
+        }
+
+        .nav-brand {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .nav-menu {
+            display: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .nav-btn {
+            background-color: var(--white);
+            color: var(--primary-purple);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .nav-btn:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .mobile-menu-btn {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: block;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            padding: 1rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu-link {
+            display: block;
+            padding: 0.5rem 0;
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .mobile-menu-link:hover {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Contenido de la pagina */
+        .contact-container {
+            max-width: 64rem;
+            margin: 4rem auto;
+            padding: 0 1rem;
+        }
+
+        .page-heading {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .contact-form-card,
+        .contact-info-card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-700);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary-purple);
+            box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.1);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: var(--primary-purple);
+            color: var(--white);
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1rem;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--primary-purple-dark);
+        }
+
+        .info-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 3rem;
+            height: 3rem;
+            background-color: rgba(109, 40, 217, 0.1);
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: var(--primary-purple);
+        }
+
+        .contact-info-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-info-text {
+            color: var(--gray-600);
+            margin: 0;
+        }
+
+        .social-section {
+            background-color: var(--gray-100);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin-top: 2rem;
+        }
+
+        .social-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: var(--primary-purple);
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .social-link:hover {
+            background-color: var(--primary-purple-dark);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-purple-darker);
+            color: var(--white);
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }        
+
+        .footer-logo-inner {
+            width: 2.5rem;
+            height: 2.5rem;            
+        }
+
+        .footer-heading {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-list {
+            list-style: none;
+        }
+
+        .footer-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-list a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-list a:hover {
+            color: var(--white);
+        }
+
+        .footer-divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 2rem 0;
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-copyright {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1rem;
+        }
+
+        .footer-values {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-value {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .nav-menu {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAvegacion -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <div class="logo">
+                    <div class="logo-square">
+                        <div class="logo-inner">
+                            <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400.91 398.23">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: #fff;
+                                    }
+
+                                    .cls-2 {
+                                        fill: #371b44;
+                                        opacity: .3;
+                                    }
+
+                                    .cls-3 {
+                                        fill: url(#Degradado_sin_nombre_52);
+                                    }
+
+                                    .cls-4 {
+                                        fill: none;
+                                        stroke: #8e8e8e;
+                                        stroke-miterlimit: 10;
+                                    }
+
+                                    .cls-5 {
+                                        fill: #353535;
+                                        opacity: .22;
+                                    }
+
+                                    .cls-6 {
+                                        opacity: .35;
+                                    }
+
+                                    .cls-7 {
+                                        opacity: .26;
+                                    }
+
+                                    .cls-8 {
+                                        fill: #878787;
+                                    }
+                                    </style>
+                                    <linearGradient id="Degradado_sin_nombre_52" data-name="Degradado sin nombre 52" x1="119.94" y1="244.67" x2="421.45" y2="119.01" gradientUnits="userSpaceOnUse">
+                                    <stop offset=".07" stop-color="#fff"/>
+                                    <stop offset=".64" stop-color="#e8e8e8"/>
+                                    <stop offset=".69" stop-color="#e6e6e6"/>
+                                    </linearGradient>
+                                </defs>
+                                <polygon class="cls-2" points="371.72 36.56 0 128.6 207.79 184.63 233.99 398.23 371.72 36.56"/>
+                                <polygon class="cls-3" points="379.82 16.12 242.61 376.44 216.51 163.65 9.5 107.81 145.81 74.06 157.32 71.21 287.09 39.08 291.7 37.94 299.68 35.97 303.22 35.09 379.82 16.12"/>
+                                <path class="cls-5" d="m160.96,111.81c.73,2.92-1.06,5.88-3.97,6.6-2.93.73-5.89-1.05-6.61-3.97l-2.74-11.01c-2.52-10.16-3.05-20.03-1.83-29.37l11.51-2.85c-1.85,9.25-1.67,19.22.91,29.59l2.73,11.01Z"/>
+                                <path class="cls-1" d="m172.05,106.07c1.42,7.01-3.12,13.84-10.12,15.26s-13.85-3.11-15.27-10.12,3.12-13.84,10.13-15.26,13.84,3.12,15.26,10.12Z"/>
+                                <path class="cls-4" d="m169.56,106.58c1.14,5.64-2.51,11.13-8.14,12.27s-11.13-2.5-12.27-8.14,2.51-11.13,8.14-12.27,11.13,2.51,12.27,8.14Z"/>
+                                <path class="cls-5" d="m313.78,79.4c-3,1.09-6.31-.48-7.39-3.51l-4.07-11.4c-3.58-10.04-8.79-18.52-15.23-25.41l4.61-1.14,7.98-1.97c5.58,7.04,10.17,15.25,13.5,24.59l4.07,11.41c1.08,3.01-.48,6.36-3.47,7.43Z"/>
+                                <path class="cls-1" d="m330.38,74.01c1.42,7.01-3.12,13.84-10.12,15.26-7.01,1.42-13.84-3.11-15.26-10.12-1.42-7,3.11-13.84,10.12-15.26,7-1.42,13.84,3.12,15.26,10.12Z"/>
+                                <path class="cls-4" d="m327.6,74.58c1.11,5.48-2.43,10.81-7.91,11.92-5.48,1.11-10.81-2.43-11.92-7.91-1.11-5.47,2.43-10.81,7.91-11.92,5.47-1.11,10.81,2.43,11.92,7.91Z"/>
+                                <path class="cls-8" d="m318.72,80.32c-2.96.6-5.84-1.31-6.43-4.26l-2.25-11.12c-8.26-40.77-46.78-60.45-87.55-52.2-40.77,8.26-68.6,41.37-60.35,82.14l2.25,11.12c.6,2.95-1.31,5.83-4.26,6.42s-5.83-1.31-6.43-4.26l-2.25-11.12c-9.45-46.67,22.21-85.54,68.87-94.99,46.66-9.45,90.95,14.05,100.4,60.72l2.25,11.12c.6,2.95-1.32,5.83-4.26,6.42Z"/>
+                                <g class="cls-6">
+                                    <image width="95" height="255" transform="translate(180.91 131.12)" xlink:href="data:image/png;base64,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"/>
+                                </g>
+                                <g class="cls-6">
+                                    <image width="250" height="123" transform="translate(.91 75.12)" xlink:href="data:image/png;base64,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"/>
+                                </g>
+                                <g class="cls-7">
+                                    <image width="122" height="199" transform="translate(278.91 16.12)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHoAAADHCAYAAADWDUdPAAAACXBIWXMAAAsSAAALEgHS3X78AAADzklEQVR4nO3cW0orURCF4crBYSTzcP5PzkPnETnYZSrtTvpWgbr8Hwg+iDQuqlw7O0QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA1zjxd/VzvV7PInKZfuHn6XT6ivJs/wI8QyX/Qz5PX6G8dU/GWciQhYn2M61tDfkr0toWgnZ1Mb8sVMhC0D6maX63RSzaMxK0j4sJOdzaFoJ2YwtYuJCFoI+blbDPiGtbCNqF/b/8EXFtC0Efk6GEKYI+JnwJUwR9TPgSpgh6pywlTBH0fmnWthD0PqaE/b62Hf2ZCXqfy6xph17bQtC72UkOe3a2CHqjbCVMEfR2qUqYIugNMpYwRdDbpCthiqC3Cf12oWcIeqX5e8IyrW0h6E3Srm0h6HVmJSzN2dki6HVST7MQ9GppS5gi6AXZS5gi6GXp17YQ9HOmhL1PP5hybQtBL7p7XTvr2haCXpTypmqEoB+YlbCPjGdni6AfK1HCFEEPVCphiqDHypQwRdBjZUqYIugZU8L0AiP92haCHiq3toWg7w1KWIm1LQT9h53m9Gdni6DvlSthiqAnVUuYIuibkiVMEfRN2bUtBP2j2gXGCEH/KHWBMdI+6IoXGCPtg65ewhRBFy9hqnXQ1c/OVveJbrG2pXPQlS8wRjpPdNkLjJHOQbcoYapl0J1KmOo60W1KmGoXdLcSpjpOdKsSpjoG3aqEqVZBdyxhqttEtythqlvQLde2dAq689qWZhPddm1Ll6C7np2tLhPd8uxsdQm6bQlT5YPuXsJUh4luXcJU6aApYTfVJ7p9CVPVg25fwlTZoClh9ypPNCXMqBw0a9soGTRr+6+qE83anikXNGfnsYoTzdl5oGLQlLCBUkFTwh6rNtGUsAfKBE0Je67SRFPCnqgUNCXsiRJBU8KWVZloStiCKkGzthekD7rD53h6qDDR5T/H00PqoLt8jqeH7BNNCVspe9CUsJXSBk0J2ybzRFPCNsgctJ1oStiClEHP1jYlbIWsE83a3ihd0ObsrBcYlLAVMk4007xDxqApYTukCpoStl+2iWZt75QmaC4wjsk00VxgHJApaC4wDkgRNBcYx2WZaErYQVmC5ux8UPigOTv7yDDRrG0HoYPmAsNP9Ilmmp1ED5oS5iRs0JQwX5EnmrXtKHLQdpopYQeFDHq2tplmB1En+u6mimk+LmrQZ/M9ITsIFzRr+zUiTrRt2pQwJ6GCNi952rDhINpEM80vEi1oW8KYZkdvwZ7n96VOptlXtKCZYgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAREfkGVLOnNsOjTeEAAAAASUVORK5CYII="/>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                    <span class="nav-brand">Luvix</span>
+                </div>
+                
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="nosotros.html" class="nav-link">Sobre Nosotros</a>
+                    <a href="#" class="nav-link active">Contáctanos</a>
+                    <a href="login.html" class="nav-link">Inicio Sesión</a>                    
+                    <a href="registro.html" class="nav-link">Regístrate</a>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="index.html" class="mobile-menu-link">Inicio</a>
+                <a href="about.html" class="mobile-menu-link">Sobre Nosotros</a>
+                <a href="#" class="mobile-menu-link">Contáctanos</a>
+                <a href="login.html" class="mobile-menu-link">Iniciar Sesión</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido de la pagina -->
+    <main>
+        <div class="contact-container">
+            <div class="page-heading">
+                <h1 class="page-title">Contáctanos</h1>
+                <p class="page-subtitle">Estamos aquí para ayudarte con cualquier pregunta o inquietud</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-form-card">
+                    <h2 class="form-title">Envíanos un mensaje</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Nombre completo</label>
+                            <input type="text" id="name" class="form-input" placeholder="Tu nombre completo" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Correo electrónico</label>
+                            <input type="email" id="email" class="form-input" placeholder="tu@email.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Asunto</label>
+                            <input type="text" id="subject" class="form-input" placeholder="¿Sobre qué quieres contactarnos?" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Mensaje</label>
+                            <textarea id="message" class="form-textarea" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Enviar mensaje</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info-card">
+                    <h2 class="info-title">Información de contacto</h2>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="contact-info-title">Ubicación</h3>
+                            <p class="contact-info-text">La Paz, Zacatecoluca, zona urbana central</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="contact-info-title">Correo electrónico</h3>
+                            <p class="contact-info-text">info@luvix.com</p>
+                            <p class="contact-info-text">soporte@luvix.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="contact-info-title">Teléfono</h3>
+                            <p class="contact-info-text">+503 XXXX-XXXX</p>
+                            <p class="contact-info-text">Lunes a Viernes, 9am - 6pm</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-section">
+                        <h3 class="social-title">Síguenos en redes sociales</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <div class="footer-logo-square">
+                            <div class="footer-logo-inner">
+                                <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400.91 398.23">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: #fff;
+                                    }
+
+                                    .cls-2 {
+                                        fill: #371b44;
+                                        opacity: .3;
+                                    }
+
+                                    .cls-3 {
+                                        fill: url(#Degradado_sin_nombre_52);
+                                    }
+
+                                    .cls-4 {
+                                        fill: none;
+                                        stroke: #8e8e8e;
+                                        stroke-miterlimit: 10;
+                                    }
+
+                                    .cls-5 {
+                                        fill: #353535;
+                                        opacity: .22;
+                                    }
+
+                                    .cls-6 {
+                                        opacity: .35;
+                                    }
+
+                                    .cls-7 {
+                                        opacity: .26;
+                                    }
+
+                                    .cls-8 {
+                                        fill: #878787;
+                                    }
+                                    </style>
+                                    <linearGradient id="Degradado_sin_nombre_52" data-name="Degradado sin nombre 52" x1="119.94" y1="244.67" x2="421.45" y2="119.01" gradientUnits="userSpaceOnUse">
+                                    <stop offset=".07" stop-color="#fff"/>
+                                    <stop offset=".64" stop-color="#e8e8e8"/>
+                                    <stop offset=".69" stop-color="#e6e6e6"/>
+                                    </linearGradient>
+                                </defs>
+                                <polygon class="cls-2" points="371.72 36.56 0 128.6 207.79 184.63 233.99 398.23 371.72 36.56"/>
+                                <polygon class="cls-3" points="379.82 16.12 242.61 376.44 216.51 163.65 9.5 107.81 145.81 74.06 157.32 71.21 287.09 39.08 291.7 37.94 299.68 35.97 303.22 35.09 379.82 16.12"/>
+                                <path class="cls-5" d="m160.96,111.81c.73,2.92-1.06,5.88-3.97,6.6-2.93.73-5.89-1.05-6.61-3.97l-2.74-11.01c-2.52-10.16-3.05-20.03-1.83-29.37l11.51-2.85c-1.85,9.25-1.67,19.22.91,29.59l2.73,11.01Z"/>
+                                <path class="cls-1" d="m172.05,106.07c1.42,7.01-3.12,13.84-10.12,15.26s-13.85-3.11-15.27-10.12,3.12-13.84,10.13-15.26,13.84,3.12,15.26,10.12Z"/>
+                                <path class="cls-4" d="m169.56,106.58c1.14,5.64-2.51,11.13-8.14,12.27s-11.13-2.5-12.27-8.14,2.51-11.13,8.14-12.27,11.13,2.51,12.27,8.14Z"/>
+                                <path class="cls-5" d="m313.78,79.4c-3,1.09-6.31-.48-7.39-3.51l-4.07-11.4c-3.58-10.04-8.79-18.52-15.23-25.41l4.61-1.14,7.98-1.97c5.58,7.04,10.17,15.25,13.5,24.59l4.07,11.41c1.08,3.01-.48,6.36-3.47,7.43Z"/>
+                                <path class="cls-1" d="m330.38,74.01c1.42,7.01-3.12,13.84-10.12,15.26-7.01,1.42-13.84-3.11-15.26-10.12-1.42-7,3.11-13.84,10.12-15.26,7-1.42,13.84,3.12,15.26,10.12Z"/>
+                                <path class="cls-4" d="m327.6,74.58c1.11,5.48-2.43,10.81-7.91,11.92-5.48,1.11-10.81-2.43-11.92-7.91-1.11-5.47,2.43-10.81,7.91-11.92,5.47-1.11,10.81,2.43,11.92,7.91Z"/>
+                                <path class="cls-8" d="m318.72,80.32c-2.96.6-5.84-1.31-6.43-4.26l-2.25-11.12c-8.26-40.77-46.78-60.45-87.55-52.2-40.77,8.26-68.6,41.37-60.35,82.14l2.25,11.12c.6,2.95-1.31,5.83-4.26,6.42s-5.83-1.31-6.43-4.26l-2.25-11.12c-9.45-46.67,22.21-85.54,68.87-94.99,46.66-9.45,90.95,14.05,100.4,60.72l2.25,11.12c.6,2.95-1.32,5.83-4.26,6.42Z"/>
+                                <g class="cls-6">
+                                    <image width="95" height="255" transform="translate(180.91 131.12)" xlink:href="data:image/png;base64,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"/>
+                                </g>
+                                <g class="cls-6">
+                                    <image width="250" height="123" transform="translate(.91 75.12)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAB7CAYAAABdAJ1AAAAACXBIWXMAAAsSAAALEgHS3X78AAAIEklEQVR4nO3deW8bZRTF4RmPnbVJSreUXQIB3/8L8BUAiX9AQmxiaYGWLmniHb3RueVwGYeSZhnbv0eyxo7TUiId3zvve2dSAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMD1mc/nNT9+4GJ1JlQKeHn0yks9qjjWdT0/+28AsEi/Yz+Znv2b5vaYzedzgg+cU9eC7lXdzfSoqr+DPyP0wKvpYuvepMD37HWtcE8U/HnLhwDBB5JOLXzZQpwfe/boW9gjzNPc5lvwT/9ago911+kV7hR8r+6VnjdnVPtKr6d5cY/gY90szVZWS7X34Dep2le2ej9pqfbR9hN6rIWl3bM+o9rH60H6UKgU8ImqfA59RfCxqlZiOGVBtW/sA2BgYZ/r+2YK/FRfn9kHAMHHSlnJKTRbwa9S6Gvbq4/g1xb8cWrzPfi0+lhaKz9umkLvbX5j5/aNhb1nz3ObT/CxlNZurtyCXy+o9hu2sFfZAt/Ugu+vX57nE3p01VpfQLKg2vet0vct9HkdoIR7aOH3D4HT9wk+uoIrxUyq9k1a0OtrUW9gX59biz9Kbf44tfkEH9eGoC+QQp+r/YYeTar08Xyqaj+1xyQN75wO9RB+XAWC/orSZbS+ZRcfAB7+JlXzaWrzZ9YBzFncw2Uj6OfQUu2b1Npv2haet/kR4hL4E2vvJ3o+YWoPl4GgX4BU7Rs7j4/nW+mDoLLKXinkJ6r645Zqz6o+XgtBv2AKfQzjePAHau23re1vbFQ32voS9GMdp6ntJ/g4F4J+ySz4PVvIa+z5Tjrfb9J5ewR/aG3+sOWafIKPhQj6FbLQR6vft+D3reLHwp5Xe2/zj2xVf2It/5TQow1BvyZnbN9FyMuC3q6ex3ubKfhznc8/t3P8k/T+lOCDoHdEy7BO31bvGz2/oYU9X9mf2Yr90EI/tUW+McFfbwS9g9IqfjyPcG8q7Hs6eieQq30J+bMU/GML/ozgrweCvgQWDOts2Sx+eb6v44a9F4M5EeoS+KfW3kfw/XtmjOuuHoK+ZFqqvQd/U6v4+1rUa+yDYJBm8GNo54nCHvP6x2l8l9CvAIK+5FqGdTYs2AMF/kAfAJv2Xp1GcacK+Z9a1T/WcZTafIK/hAj6Cmm5N37Pwr6tVfwD27sfWLsf8/lDW9R7XFXVC5vWO0pX6b2c7iP83UbQV1gKfpP26QcK/Btazd+xqb2q5UKcEvhHFvz4MBhaxZ9Q8buJoK+JFPqe3U0nAl7CfktVf5A+FBpbzIutvFLd/9Axgv/MhncmVPvuIOhrKo3m9m0hb1NB31Xw9/X1G3ZFXpzfH1uoS3X/Xav6Rxb6aXoQ/GtA0OGhb6zqR/B3tWd/R2GPxb7dNLc/sUW8EvbfFPZx2tabWptP8K8IQce/pOD3W6byIvgH+vqevifEOf1IgS6Bf6jjyIJ/3HIHHoJ/CQg6zpRC37Nqv2er+HfV4m/Y+f6Gtfke/LFC/lB7+GO99yTN6Y8J/sUh6Hhl9htxemkqb8+26Urg7+kY7f+e3Ua7UYif2+JeCf4vOo4s+LHQ57P6BP8cCDrOzaq93zYrgr+toJfA39c23r46gC39N3sW/GcW/BLyn7Wd91RDPC8W3Vqb4P83go4L0VLtGwv+gW3fldDf1Nd37LnfXnuosD/T0M5PCvtQgX+cgj8m+Gcj6LgUFny/cWaM40a1LyF/q6qq26r2txT+xv5NI1uxH1nwHyv4R6r8R1btx1yV908EHVdCwW9Std9W2CPk76jFj+27NxT8nv3GnKGq+7EF/wcdT2yQ57ne9xttrm21J+i4cqnaD2wc96aOWwr5u9rGu6mqv2v31Ivgn1jwh6ru32sf/7GGeI5U6SfrGnyCjmvVEvqo9js2mVe2797T69i+u63jIN1UM87hn2gL7ztV+BOb3ntu7f3I7rC7ssEn6OiUdNltzNzv2hz+lkL+nrbxbqnq76W76Xro42aaJeTf6hh334kJPq/4Kxd8go7OShfi+G+33VHYS0t/WFXV+wr7rqr8Xdu7j+DP7Aq8IwW9BP4bHX1096kF/+U99Zc59AQdS8Fa/Nra/I3UxscHwAfaxrttU3uDNM8fFf93C/5DBf+h3iuV/oFN7Q2XtdoTdCylVO0HVu1vqLqXxbw3Ffq7qvYxtXdgk3wR1qkCH+fwxwr81xreKZX+V1X7ca72VceDT9Cx9Fqq/YbN48f5+45C/qH27u+o6h/YjTgGLcF/oPCXvfuvFPYY0X2wKPhdCz1Bx8pJ1T5m7PsK/D219CXsH+kcPy7OiVHdbbuVdtxU46m18S8U+LbgR5t/eoFOVwJP0LHSUrXvW7X3i292FPKPNbRzT23/Qbrm3i+pXRT8H3WBThni+aOu63EXfr4EHWvFqn3fqv1AgT9US1/C/onCHtX+MN07v7KtuIldgVeC/llVVZ8q+C+6UNX71/0PAK6SQnf6O+vm83lU29oGbGIG/wu7Y+59Bf9tLezdV+h9u29Pf25bk3n9LhVSgo61ZZXWg39kbblX+88V8rcV+vsKeFT7PZ3L/2bTeCPO0YEOazm337RLbg9bqv2hWviv1LZ/WbqEuq5nXfi/JOjAK0jn9pst5/b76gweaSHuUV3Xo678bAk68D8tqPZxGhzbcZ3ZWqsIOvD6LPinuNkFAAAAAAAAAAAAAAAAAAAAAAAA1h4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoMOqqvoLIhhr7Ek0uLAAAAAASUVORK5CYII="/>
+                                </g>
+                                <g class="cls-7">
+                                    <image width="122" height="199" transform="translate(278.91 16.12)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHoAAADHCAYAAADWDUdPAAAACXBIWXMAAAsSAAALEgHS3X78AAADzklEQVR4nO3cW0orURCF4crBYSTzcP5PzkPnETnYZSrtTvpWgbr8Hwg+iDQuqlw7O0QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA1zjxd/VzvV7PInKZfuHn6XT6ivJs/wI8QyX/Qz5PX6G8dU/GWciQhYn2M61tDfkr0toWgnZ1Mb8sVMhC0D6maX63RSzaMxK0j4sJOdzaFoJ2YwtYuJCFoI+blbDPiGtbCNqF/b/8EXFtC0Efk6GEKYI+JnwJUwR9TPgSpgh6pywlTBH0fmnWthD0PqaE/b62Hf2ZCXqfy6xph17bQtC72UkOe3a2CHqjbCVMEfR2qUqYIugNMpYwRdDbpCthiqC3Cf12oWcIeqX5e8IyrW0h6E3Srm0h6HVmJSzN2dki6HVST7MQ9GppS5gi6AXZS5gi6GXp17YQ9HOmhL1PP5hybQtBL7p7XTvr2haCXpTypmqEoB+YlbCPjGdni6AfK1HCFEEPVCphiqDHypQwRdBjZUqYIugZU8L0AiP92haCHiq3toWg7w1KWIm1LQT9h53m9Gdni6DvlSthiqAnVUuYIuibkiVMEfRN2bUtBP2j2gXGCEH/KHWBMdI+6IoXGCPtg65ewhRBFy9hqnXQ1c/OVveJbrG2pXPQlS8wRjpPdNkLjJHOQbcoYapl0J1KmOo60W1KmGoXdLcSpjpOdKsSpjoG3aqEqVZBdyxhqttEtythqlvQLde2dAq689qWZhPddm1Ll6C7np2tLhPd8uxsdQm6bQlT5YPuXsJUh4luXcJU6aApYTfVJ7p9CVPVg25fwlTZoClh9ypPNCXMqBw0a9soGTRr+6+qE83anikXNGfnsYoTzdl5oGLQlLCBUkFTwh6rNtGUsAfKBE0Je67SRFPCnqgUNCXsiRJBU8KWVZloStiCKkGzthekD7rD53h6qDDR5T/H00PqoLt8jqeH7BNNCVspe9CUsJXSBk0J2ybzRFPCNsgctJ1oStiClEHP1jYlbIWsE83a3ihd0ObsrBcYlLAVMk4007xDxqApYTukCpoStl+2iWZt75QmaC4wjsk00VxgHJApaC4wDkgRNBcYx2WZaErYQVmC5ux8UPigOTv7yDDRrG0HoYPmAsNP9Ilmmp1ED5oS5iRs0JQwX5EnmrXtKHLQdpopYQeFDHq2tplmB1En+u6mimk+LmrQZ/M9ITsIFzRr+zUiTrRt2pQwJ6GCNi952rDhINpEM80vEi1oW8KYZkdvwZ7n96VOptlXtKCZYgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAREfkGVLOnNsOjTeEAAAAASUVORK5CYII="/>
+                                </g>
+                            </svg>
+                            </div>
+                        </div>
+                        <span class="footer-brand">Luvix</span>
+                    </div>
+                    <p class="footer-text">Plataforma de comercio electrónico para emprendedores y empresas.</p>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Servicios</h3>
+                    <ul class="footer-list">
+                        <li><a href="#">Clínicas y laboratorios</a></li>
+                        <li><a href="#">Veterinarias</a></li>
+                        <li><a href="#">Abogados y notariados</a></li>
+                        <li><a href="#">Fotografía y video</a></li>
+                        <li><a href="#">Fontanería y albañilería</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Productos</h3>
+                    <ul class="footer-list">
+                        <li><a href="#">Panaderías y pastelerías</a></li>
+                        <li><a href="#">Bisuterías</a></li>
+                        <li><a href="#">Comida rápida</a></li>
+                        <li><a href="#">Ferreterías</a></li>
+                        <li><a href="#">Ropa y calzado</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Contacto</h3>
+                    <address class="footer-text" style="font-style: normal;">
+                        La Paz, Zacatecoluca<br>
+                        Zona urbana central<br>
+                        <br>
+                        Email: info@luvix.com<br>
+                        Tel: +503 XXXX-XXXX
+                    </address>
+                </div>
+            </div>
+            
+            <div class="footer-divider">
+                <p class="footer-copyright">&copy; 2024 Luvix - Lugares Virtuales. Todos los derechos reservados.</p>
+                <div class="footer-values">
+                    <span class="footer-value">Honestidad</span>
+                    <span class="footer-value">Calidad</span>
+                    <span class="footer-value">Transparencia</span>
+                    <span class="footer-value">Ética</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real application, you would send this data to a server
+            // For this demo, we'll just show an alert
+            alert(`¡Gracias por contactarnos, ${name}!\n\nHemos recibido tu mensaje sobre: "${subject}"\n\nTe responderemos a ${email} lo antes posible.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
+```
