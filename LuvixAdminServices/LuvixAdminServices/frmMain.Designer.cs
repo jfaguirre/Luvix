@@ -28,18 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            pnlMenuLateral = new Panel();
             SuspendLayout();
+            // 
+            // pnlMenuLateral
+            // 
+            pnlMenuLateral.BackColor = SystemColors.InfoText;
+            pnlMenuLateral.Dock = DockStyle.Left;
+            pnlMenuLateral.Location = new Point(0, 0);
+            pnlMenuLateral.Name = "pnlMenuLateral";
+            pnlMenuLateral.Size = new Size(200, 577);
+            pnlMenuLateral.TabIndex = 0;
             // 
             // frmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(780, 577);
+            Controls.Add(pnlMenuLateral);
             Name = "frmMain";
             Text = "Luvix Admin";
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Panel pnlMenuLateral;
     }
 }
