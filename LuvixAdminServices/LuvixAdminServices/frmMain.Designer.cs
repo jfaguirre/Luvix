@@ -36,7 +36,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Name = "frmMain";
-            Text = "Form1";
+            Text = "Luvix Admin";
             ResumeLayout(false);
         }
 
