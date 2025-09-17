@@ -1,0 +1,6 @@
+@LuvixApiServices_HostAddress = http://localhost:5206
+
+GET {{LuvixApiServices_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
