@@ -30,6 +30,8 @@
         {
             pnlEncabezado = new Panel();
             pnlMenuLateral = new Panel();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // pnlEncabezado
@@ -49,22 +51,31 @@
             pnlMenuLateral.Size = new Size(189, 569);
             pnlMenuLateral.TabIndex = 2;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(232, 88);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(581, 186);
+            dataGridView1.TabIndex = 3;
+            // 
             // frmMain
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(31, 41, 55);
-            ClientSize = new Size(869, 626);
-            Controls.Add(pnlMenuLateral);
-            Controls.Add(pnlEncabezado);
+            ClientSize = new Size(770, 520);
             Name = "frmMain";
-            Text = "Luvix Admin";
+            Load += frmMain_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            // 
+            // frmMain
+            // 
+
         }
 
         #endregion
 
         private Panel pnlEncabezado;
         private Panel pnlMenuLateral;
+        private DataGridView dataGridView1;
     }
 }
