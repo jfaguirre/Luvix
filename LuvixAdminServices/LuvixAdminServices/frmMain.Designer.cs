@@ -28,24 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
+            pnlEncabezado = new Panel();
             pnlMenuLateral = new Panel();
             SuspendLayout();
             // 
+            // pnlEncabezado
+            // 
+            pnlEncabezado.Dock = DockStyle.Top;
+            pnlEncabezado.Location = new Point(0, 0);
+            pnlEncabezado.Name = "pnlEncabezado";
+            pnlEncabezado.Size = new Size(869, 57);
+            pnlEncabezado.TabIndex = 1;
+            // 
             // pnlMenuLateral
             // 
-            pnlMenuLateral.BackColor = SystemColors.InfoText;
+            pnlMenuLateral.BackColor = Color.FromArgb(76, 29, 149);
             pnlMenuLateral.Dock = DockStyle.Left;
-            pnlMenuLateral.Location = new Point(0, 0);
+            pnlMenuLateral.Location = new Point(0, 57);
             pnlMenuLateral.Name = "pnlMenuLateral";
-            pnlMenuLateral.Size = new Size(200, 577);
-            pnlMenuLateral.TabIndex = 0;
+            pnlMenuLateral.Size = new Size(189, 569);
+            pnlMenuLateral.TabIndex = 2;
             // 
             // frmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(780, 577);
+            BackColor = Color.FromArgb(31, 41, 55);
+            ClientSize = new Size(869, 626);
             Controls.Add(pnlMenuLateral);
+            Controls.Add(pnlEncabezado);
             Name = "frmMain";
             Text = "Luvix Admin";
             ResumeLayout(false);
@@ -53,6 +64,7 @@
 
         #endregion
 
+        private Panel pnlEncabezado;
         private Panel pnlMenuLateral;
     }
 }
