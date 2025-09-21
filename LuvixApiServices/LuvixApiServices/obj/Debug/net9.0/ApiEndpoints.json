@@ -32,6 +32,53 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "LuvixApiServices.Controllers.ActualizarUsuarioController",
+    "Method": "UpdateUsuario",
+    "RelativePath": "api/ActualizarUsuario/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "objeto",
+        "Type": "LuvixApiServices.Models.DTOs.ActualizarUsuarioDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LuvixApiServices.Controllers.BorrarUsuarioController",
+    "Method": "DeleteUsuario",
+    "RelativePath": "api/BorrarUsuario/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LuvixApiServices.Controllers.MostrarUsuariosController",
+    "Method": "Lista",
+    "RelativePath": "api/MostrarUsuarios/lista-usuarios",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "LuvixApiServices.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

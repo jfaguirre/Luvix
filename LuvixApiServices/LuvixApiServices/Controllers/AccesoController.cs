@@ -64,7 +64,7 @@ namespace LuvixApiServices.Controllers
                 ).FirstOrDefaultAsync();
             if(usuarioEncontrado == null)
             {
-                return StatusCode(StatusCodes.Status200OK, new { mensaje = false, token = "" });               
+                return StatusCode(StatusCodes.Status200OK, new { mensaje = "El correo o password ingresado son incorrectos.", token = "" });               
             }
             else
             {
