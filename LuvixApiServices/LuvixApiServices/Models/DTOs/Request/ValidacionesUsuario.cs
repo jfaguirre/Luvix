@@ -37,9 +37,9 @@ namespace LuvixApiServices.Models.DTOs.Request
                 .WithMessage("La contraseña debe tener al menos una mayúscula, minúsculas, un número y un carácter especial.");
 
             // Foto de perfil del usuario (opcional)
-            RuleFor(x => x.FotoPerfil)
-                .MaximumLength(2083).WithMessage("La URL de la foto de perfil no puede exceder los 2083 caracteres.")
-                .When(x => !string.IsNullOrEmpty(x.FotoPerfil));
+            //RuleFor(x => x.FotoPerfil)
+            //    .MaximumLength(2083).WithMessage("La URL de la foto de perfil no puede exceder los 2083 caracteres.")
+            //    .When(x => !string.IsNullOrEmpty(x.FotoPerfil));
         }
     }
 }

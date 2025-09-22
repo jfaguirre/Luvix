@@ -31,6 +31,8 @@
             pnlEncabezado = new Panel();
             pnlMenuLateral = new Panel();
             dataGridView1 = new DataGridView();
+            panelEncabezado = new Panel();
+            panelMenuLateral = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -59,10 +61,29 @@
             dataGridView1.Size = new Size(581, 186);
             dataGridView1.TabIndex = 3;
             // 
+            // panelEncabezado
+            // 
+            panelEncabezado.Dock = DockStyle.Top;
+            panelEncabezado.Location = new Point(0, 0);
+            panelEncabezado.Name = "panelEncabezado";
+            panelEncabezado.Size = new Size(913, 43);
+            panelEncabezado.TabIndex = 0;
+            // 
+            // panelMenuLateral
+            // 
+            panelMenuLateral.Dock = DockStyle.Left;
+            panelMenuLateral.Location = new Point(0, 43);
+            panelMenuLateral.Name = "panelMenuLateral";
+            panelMenuLateral.Size = new Size(200, 590);
+            panelMenuLateral.TabIndex = 1;
+            // 
             // frmMain
             // 
-            ClientSize = new Size(770, 520);
+            ClientSize = new Size(913, 633);
+            Controls.Add(panelMenuLateral);
+            Controls.Add(panelEncabezado);
             Name = "frmMain";
+            Text = "Luvix Admin";
             Load += frmMain_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -77,5 +98,7 @@
         private Panel pnlEncabezado;
         private Panel pnlMenuLateral;
         private DataGridView dataGridView1;
+        private Panel panelEncabezado;
+        private Panel panelMenuLateral;
     }
 }

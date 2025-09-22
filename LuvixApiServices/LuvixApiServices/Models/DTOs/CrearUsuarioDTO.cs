@@ -11,7 +11,7 @@ namespace LuvixApiServices.Models.DTOs
         public string Email { get; set; } = null!;
 
         public string Password { get; set; } = null!;
+        
 
-        public string? FotoPerfil { get; set; }
     }
 }
