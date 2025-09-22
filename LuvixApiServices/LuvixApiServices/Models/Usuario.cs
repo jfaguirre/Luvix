@@ -8,7 +8,7 @@ namespace LuvixApiServices.Models
         public string Apellido { get; set; } = null!;
         public string Email { get; set; } = null!;
         public string Password { get; set; } = null!;
-        public string? FotoPerfil { get; set; }
+        public string? FotoPerfil { get; set; } = null;
         public DateTime FechaRegistro { get; set; }
         public string Estado { get; set; } = "activo";
 

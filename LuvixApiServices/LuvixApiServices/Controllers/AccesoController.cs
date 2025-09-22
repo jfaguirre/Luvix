@@ -26,6 +26,9 @@ namespace LuvixApiServices.Controllers
 
         // POST: api/Acceso/Registrar
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [Route("Registrarse")]
         public async Task<IActionResult> Registrarse(CrearUsuarioDTO objeto)
         {
@@ -37,6 +40,7 @@ namespace LuvixApiServices.Controllers
                     Apellido = objeto.Apellido,
                     Email = objeto.Email,
                     Password = _utilidades.encriptarSHA256(objeto.Password),
+                    FotoPerfil = null,  
                     FechaRegistro = DateTime.Now,
                     Estado = "activo"
                 };
@@ -52,7 +56,7 @@ namespace LuvixApiServices.Controllers
             }            
         }
 
-        // POST: api/Acceso/Registrar - Login
+        // POST: api/Acceso/Login
         [HttpPost]
         [Route("Login")]
         public async Task<IActionResult> Login(LoginUsuarioDTO objeto)
