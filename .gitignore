@@ -1,0 +1,72 @@
+# Visual Studio files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+bld/
+BuildLog.htm
+BuildLog.log
+
+# Visual Studio project files
+*.vcxproj.filters
+*.vcxproj.user
+*.csproj.user
+*.vbproj.user
+
+# Output directory
+bin/
+obj/
+
+# NuGet packages
+packages/
+
+# MSTest test Results
+TestResults/
+*.Cache
+*.DotSettings.user
+*.nupkg
+*.pdb
+
+# Publish profile
+PublishProfiles/
+
+# Azure Web App publish settings
+Properties/PublishProfiles/
+
+# Microsoft Azure Web App publish settings
+*.publishsettings
+
+# SQL Server files
+*.mdf
+*.ldf
+
+# Node.js
+node_modules/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.tmp
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Local config
+config/local/
