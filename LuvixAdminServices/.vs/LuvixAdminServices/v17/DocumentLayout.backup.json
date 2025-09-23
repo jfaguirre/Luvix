@@ -1,18 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixAdminServices\\",
+  "WorkspaceRootPath": "C:\\Users\\garci\\Desktop\\Luvix\\Luvix\\LuvixAdminServices\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F8BAF08F-1492-4D71-9FA0-02A20FF754EE}|LuvixAdminServices\\LuvixAdminServices.csproj|c:\\users\\usuario\\documents\\github\\luvix\\luvixadminservices\\luvixadminservices\\models\\dtos\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F8BAF08F-1492-4D71-9FA0-02A20FF754EE}|LuvixAdminServices\\LuvixAdminServices.csproj|solutionrelative:luvixadminservices\\models\\dtos\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F8BAF08F-1492-4D71-9FA0-02A20FF754EE}|LuvixAdminServices\\LuvixAdminServices.csproj|c:\\users\\usuario\\documents\\github\\luvix\\luvixadminservices\\luvixadminservices\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{F8BAF08F-1492-4D71-9FA0-02A20FF754EE}|LuvixAdminServices\\LuvixAdminServices.csproj|C:\\Users\\garci\\Desktop\\Luvix\\Luvix\\LuvixAdminServices\\luvixadminservices\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F8BAF08F-1492-4D71-9FA0-02A20FF754EE}|LuvixAdminServices\\LuvixAdminServices.csproj|solutionrelative:luvixadminservices\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F8BAF08F-1492-4D71-9FA0-02A20FF754EE}|LuvixAdminServices\\LuvixAdminServices.csproj|c:\\users\\usuario\\documents\\github\\luvix\\luvixadminservices\\luvixadminservices\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F8BAF08F-1492-4D71-9FA0-02A20FF754EE}|LuvixAdminServices\\LuvixAdminServices.csproj|c:\\users\\garci\\desktop\\luvix\\luvix\\luvixadminservices\\luvixadminservices\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F8BAF08F-1492-4D71-9FA0-02A20FF754EE}|LuvixAdminServices\\LuvixAdminServices.csproj|solutionrelative:luvixadminservices\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8BAF08F-1492-4D71-9FA0-02A20FF754EE}|LuvixAdminServices\\LuvixAdminServices.csproj|c:\\users\\garci\\desktop\\luvix\\luvix\\luvixadminservices\\luvixadminservices\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8BAF08F-1492-4D71-9FA0-02A20FF754EE}|LuvixAdminServices\\LuvixAdminServices.csproj|solutionrelative:luvixadminservices\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8BAF08F-1492-4D71-9FA0-02A20FF754EE}|LuvixAdminServices\\LuvixAdminServices.csproj|c:\\users\\garci\\desktop\\luvix\\luvix\\luvixadminservices\\luvixadminservices\\models\\dtos\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8BAF08F-1492-4D71-9FA0-02A20FF754EE}|LuvixAdminServices\\LuvixAdminServices.csproj|solutionrelative:luvixadminservices\\models\\dtos\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,32 +26,42 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "UsuarioDTO.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixAdminServices\\LuvixAdminServices\\Models\\DTOs\\UsuarioDTO.cs",
+              "DocumentMoniker": "C:\\Users\\garci\\Desktop\\Luvix\\Luvix\\LuvixAdminServices\\LuvixAdminServices\\Models\\DTOs\\UsuarioDTO.cs",
               "RelativeDocumentMoniker": "LuvixAdminServices\\Models\\DTOs\\UsuarioDTO.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixAdminServices\\LuvixAdminServices\\Models\\DTOs\\UsuarioDTO.cs",
+              "ToolTip": "C:\\Users\\garci\\Desktop\\Luvix\\Luvix\\LuvixAdminServices\\LuvixAdminServices\\Models\\DTOs\\UsuarioDTO.cs",
               "RelativeToolTip": "LuvixAdminServices\\Models\\DTOs\\UsuarioDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-18T04:59:35.998Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\garci\\Desktop\\Luvix\\Luvix\\LuvixAdminServices\\LuvixAdminServices\\Program.cs",
+              "RelativeDocumentMoniker": "LuvixAdminServices\\Program.cs",
+              "ToolTip": "C:\\Users\\garci\\Desktop\\Luvix\\Luvix\\LuvixAdminServices\\LuvixAdminServices\\Program.cs",
+              "RelativeToolTip": "LuvixAdminServices\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T16:59:04.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "frmMain.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixAdminServices\\LuvixAdminServices\\frmMain.cs",
+              "DocumentMoniker": "C:\\Users\\garci\\Desktop\\Luvix\\Luvix\\LuvixAdminServices\\LuvixAdminServices\\frmMain.cs",
               "RelativeDocumentMoniker": "LuvixAdminServices\\frmMain.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixAdminServices\\LuvixAdminServices\\frmMain.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\garci\\Desktop\\Luvix\\Luvix\\LuvixAdminServices\\LuvixAdminServices\\frmMain.cs [Dise\u00F1o]",
               "RelativeToolTip": "LuvixAdminServices\\frmMain.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-18T03:57:20.452Z",
@@ -55,11 +69,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "frmMain.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixAdminServices\\LuvixAdminServices\\frmMain.cs",
+              "DocumentMoniker": "C:\\Users\\garci\\Desktop\\Luvix\\Luvix\\LuvixAdminServices\\LuvixAdminServices\\frmMain.cs",
               "RelativeDocumentMoniker": "LuvixAdminServices\\frmMain.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixAdminServices\\LuvixAdminServices\\frmMain.cs",
+              "ToolTip": "C:\\Users\\garci\\Desktop\\Luvix\\Luvix\\LuvixAdminServices\\LuvixAdminServices\\frmMain.cs",
               "RelativeToolTip": "LuvixAdminServices\\frmMain.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
