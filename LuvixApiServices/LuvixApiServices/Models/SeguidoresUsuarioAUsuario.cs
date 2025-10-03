@@ -7,7 +7,7 @@
         public DateTime FechaSeguimiento { get; set; }
 
         // Navegación
-        public virtual Usuario Seguidor { get; set; } = null!;
-        public virtual Usuario Seguido { get; set; } = null!;
+        public Usuario Seguidor { get; set; } = null!;
+        public Usuario Seguido { get; set; } = null!;
     }
 }

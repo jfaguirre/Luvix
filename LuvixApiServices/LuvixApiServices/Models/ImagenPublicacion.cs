@@ -9,6 +9,6 @@
         public DateTime FechaSubida { get; set; }
 
         // Navegación
-        public virtual Publicacion Publicacion { get; set; } = null!;
+        public Publicacion Publicacion { get; set; } = null!;
     }
 }

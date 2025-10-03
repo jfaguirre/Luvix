@@ -13,16 +13,19 @@ namespace LuvixApiServices.Models
         public string Estado { get; set; } = "activo";
 
         // Navegación
-        public virtual ICollection<Tienda> Tiendas { get; set; } = new List<Tienda>();
-        public virtual ICollection<Comentario> Comentarios { get; set; } = new List<Comentario>();
-        public virtual ICollection<Mensaje> MensajesEnviados { get; set; } = new List<Mensaje>();
-        public virtual ICollection<Mensaje> MensajesRecibidos { get; set; } = new List<Mensaje>();
+        public ICollection<Tienda> Tiendas { get; set; } = new List<Tienda>();
+        public ICollection<Comentario> Comentarios { get; set; } = new List<Comentario>();
+        public ICollection<Mensaje> MensajesEnviados { get; set; } = new List<Mensaje>();
+        public ICollection<Mensaje> MensajesRecibidos { get; set; } = new List<Mensaje>();
 
         // Seguidores (Usuario → Usuario)
-        public virtual ICollection<SeguidorUsuarioAUsuario> Siguiendo { get; set; } = new List<SeguidorUsuarioAUsuario>(); // usuarios que sigue
-        public virtual ICollection<SeguidorUsuarioAUsuario> Seguidores { get; set; } = new List<SeguidorUsuarioAUsuario>(); // usuarios que lo siguen
+        public ICollection<SeguidorUsuarioAUsuario> Siguiendo { get; set; } = new List<SeguidorUsuarioAUsuario>(); // usuarios que sigue
+        public ICollection<SeguidorUsuarioAUsuario> Seguidores { get; set; } = new List<SeguidorUsuarioAUsuario>(); // usuarios que lo siguen
 
         // Seguidores (Usuario → Tienda)
-        public virtual ICollection<SeguidorUsuarioATienda> TiendasQueSigue { get; set; } = new List<SeguidorUsuarioATienda>();
+        public ICollection<SeguidorUsuarioATienda> TiendasQueSigue { get; set; } = new List<SeguidorUsuarioATienda>();
+
+        // Colección de roles (muchos-a-muchos)
+        public ICollection<UsuarioRol> UsuarioRoles { get; set; } = new List<UsuarioRol>();
     }
 }

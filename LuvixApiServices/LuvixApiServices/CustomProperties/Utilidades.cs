@@ -10,11 +10,7 @@ namespace LuvixApiServices.CustomProperties
     public class Utilidades
     {
         private readonly IConfiguration _configuration;
-
-        public Utilidades()
-        {
-        }
-
+       
         public Utilidades(IConfiguration configuration)
         {
             _configuration = configuration;

@@ -7,6 +7,6 @@
         public string Descripcion { get; set; } = null!;
 
         // Navegación
-        public virtual ICollection<Publicacion> Publicaciones { get; set; } = new List<Publicacion>();
+        public ICollection<Publicacion> Publicaciones { get; set; } = new List<Publicacion>();
     }
 }
