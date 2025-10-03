@@ -7,7 +7,7 @@
         public DateTime FechaSeguimiento { get; set; }
 
         // Navegación
-        public virtual Usuario Usuario { get; set; } = null!;
-        public virtual Tienda Tienda { get; set; } = null!;
+        public Usuario Usuario { get; set; } = null!;
+        public Tienda Tienda { get; set; } = null!;
     }
 }

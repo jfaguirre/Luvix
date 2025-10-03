@@ -27,18 +27,17 @@ namespace LuvixApiServices.Controllers
         // PUT: api/ActualizarUsuario/5
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUsuario(int id, ActualizarUsuarioDTO objeto)
-        {            
+        {
             var usuario = await _AppDbContext.Usuarios.FindAsync(id);
             if (usuario == null)
             {
                 return NotFound(new { mensaje = "Usuario no encontrado." });
             }
             usuario.Nombre = objeto.Nombre;
-            usuario.Apellido = objeto.Apellido;            
+            usuario.Apellido = objeto.Apellido;
             if (!string.IsNullOrEmpty(objeto.Password))
             {
-                var utilidades = new Utilidades();
-                usuario.Password = utilidades.encriptarSHA256(objeto.Password);
+                usuario.Password = _utilidades.encriptarSHA256(objeto.Password);
             }
 
             try
@@ -52,7 +51,7 @@ namespace LuvixApiServices.Controllers
                 {
                     return NotFound(new { mensaje = "Usuario no encontrado." });
                 }
-                throw; // Deja que el middleware maneje la excepción
+                throw; 
             }
         }
 

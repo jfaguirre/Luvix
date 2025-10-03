@@ -12,9 +12,9 @@
         public bool Leido { get; set; }
 
         // Navegación
-        public virtual Usuario? UsuarioRemitente { get; set; }
-        public virtual Tienda? TiendaRemitente { get; set; }
-        public virtual Usuario? UsuarioDestinatario { get; set; }
-        public virtual Tienda? TiendaDestinatario { get; set; }
+        public Usuario? UsuarioRemitente { get; set; }
+        public Tienda? TiendaRemitente { get; set; }
+        public Usuario? UsuarioDestinatario { get; set; }
+        public Tienda? TiendaDestinatario { get; set; }
     }
 }

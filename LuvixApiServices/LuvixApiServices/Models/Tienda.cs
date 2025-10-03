@@ -13,18 +13,18 @@
         public string Estado { get; set; } = "activo";
 
         // Navegación
-        public virtual Usuario Usuario { get; set; } = null!;
-        public virtual CategoriaTienda Categoria { get; set; } = null!;
-        public virtual ICollection<Publicacion> Publicaciones { get; set; } = new List<Publicacion>();
-        public virtual ICollection<Comentario> Comentarios { get; set; } = new List<Comentario>();
-        public virtual ICollection<Mensaje> MensajesEnviados { get; set; } = new List<Mensaje>();
-        public virtual ICollection<Mensaje> MensajesRecibidos { get; set; } = new List<Mensaje>();
+        public Usuario Usuario { get; set; } = null!;
+        public CategoriaTienda Categoria { get; set; } = null!;
+        public ICollection<Publicacion> Publicaciones { get; set; } = new List<Publicacion>();
+        public ICollection<Comentario> Comentarios { get; set; } = new List<Comentario>();
+        public ICollection<Mensaje> MensajesEnviados { get; set; } = new List<Mensaje>();
+        public ICollection<Mensaje> MensajesRecibidos { get; set; } = new List<Mensaje>();
 
         // Seguidores (Usuario → Tienda)
-        public virtual ICollection<SeguidorUsuarioATienda> SeguidoresUsuarios { get; set; } = new List<SeguidorUsuarioATienda>();
+        public ICollection<SeguidorUsuarioATienda> SeguidoresUsuarios { get; set; } = new List<SeguidorUsuarioATienda>();
 
         // Seguidores (Tienda → Tienda)
-        public virtual ICollection<SeguidorTiendaATienda> TiendasQueSigue { get; set; } = new List<SeguidorTiendaATienda>(); // sigue a otras tiendas
-        public virtual ICollection<SeguidorTiendaATienda> TiendasQueLaSiguen { get; set; } = new List<SeguidorTiendaATienda>(); // otras tiendas que la siguen
+        public ICollection<SeguidorTiendaATienda> TiendasQueSigue { get; set; } = new List<SeguidorTiendaATienda>(); // sigue a otras tiendas
+        public ICollection<SeguidorTiendaATienda> TiendasQueLaSiguen { get; set; } = new List<SeguidorTiendaATienda>(); // otras tiendas que la siguen
     }
 }

@@ -6,7 +6,11 @@
         public string Nombre { get; set; } = null!;
         public DateTime FechaCreacion { get; set; }
 
-        // Navegación
-        public virtual ICollection<Tienda> Tiendas { get; set; } = new List<Tienda>();
+        // Relacion con tiendas
+        public ICollection<Tienda> Tiendas { get; set; } = new List<Tienda>();
+        
+        // Relación con subcategorías
+        public ICollection<SubCategoria> Subcategorias { get; set; } = new List<SubCategoria>();
+
     }
 }

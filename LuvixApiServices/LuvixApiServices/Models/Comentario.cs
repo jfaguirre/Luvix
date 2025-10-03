@@ -11,8 +11,8 @@
         public string Estado { get; set; } = "activo";
 
         // Navegación
-        public virtual Publicacion Publicacion { get; set; } = null!;
-        public virtual Usuario? Usuario { get; set; }
-        public virtual Tienda? Tienda { get; set; }
+        public Publicacion Publicacion { get; set; } = null!;
+        public Usuario? Usuario { get; set; }
+        public Tienda? Tienda { get; set; }
     }
 }

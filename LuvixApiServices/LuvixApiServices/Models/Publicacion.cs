@@ -11,9 +11,9 @@
         public string Estado { get; set; } = "activo";
 
         // Navegación
-        public virtual Tienda Tienda { get; set; } = null!;
-        public virtual TipoPublicacion TipoPublicacion { get; set; } = null!;
-        public virtual ICollection<ImagenPublicacion> Imagenes { get; set; } = new List<ImagenPublicacion>();
-        public virtual ICollection<Comentario> Comentarios { get; set; } = new List<Comentario>();
+        public Tienda Tienda { get; set; } = null!;
+        public TipoPublicacion TipoPublicacion { get; set; } = null!;
+        public ICollection<ImagenPublicacion> Imagenes { get; set; } = new List<ImagenPublicacion>();
+        public ICollection<Comentario> Comentarios { get; set; } = new List<Comentario>();
     }
 }
