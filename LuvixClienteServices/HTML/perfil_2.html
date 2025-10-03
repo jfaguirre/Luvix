@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Perfil de Usuario - Plantilla</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f9fafb;
+      color: #2d3748;
+    }
+
+    /* Barra superior */
+    .top-bar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: linear-gradient(90deg, #8e44ad, #e91e63);
+      color: white;
+    }
+
+    .top-bar button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-left: 1rem;
+      padding: 0.5rem;
+    }
+
+    .status-indicator {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 12px;
+      height: 12px;
+      background: #4cd964;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+
+    /* Portada y perfil */
+    .profile-header {
+      position: relative;
+      text-align: center;
+      padding-top: 2rem;
+      padding-bottom: 1.5rem;
+      background: linear-gradient(90deg, #8e44ad, #e91e63);
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid white;
+      object-fit: cover;
+      margin: 0 auto 1rem;
+      position: relative;
+    }
+
+    .online-status {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #4cd964;
+      color: white;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .user-info {
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .user-info h1 {
+      font-size: 1.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .user-info p {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      margin-bottom: 1rem;
+    }
+
+    .bio {
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.9);
+      text-align: center;
+    }
+
+    /* Stats */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    /* Botones de acción */
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      padding: 0.6rem 1.2rem;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #9c27b0;
+      color: white;
+      border: none;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #9c27b0;
+      border: 1px solid #ddd;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Navegación inferior */
+    .nav-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .nav-tab {
+      padding: 0.6rem 1.2rem;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .nav-tab.active {
+      background: #9c27b0;
+      color: white;
+    }
+
+    .nav-tab:not(.active) {
+      background: #f1f3f5;
+      color: #555;
+    }
+
+    /* Sección Tiendas Favoritas */
+    .favorites-section {
+      padding: 2rem 1rem;
+      background: white;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #2d3748;
+    }
+
+    .section-title .heart {
+      color: #e91e63;
+    }
+
+    .view-all {
+      color: #9c27b0;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    /* Grid de tiendas */
+    .stores-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .store-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .store-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .store-image {
+      width: 100%;
+      height: 150px;
+      background: #edf2f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #a0aec0;
+      font-size: 0.9rem;
+    }
+
+    .store-info {
+      padding: 1rem;
+    }
+
+    .store-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .store-category {
+      font-size: 0.85rem;
+      color: #718096;
+      margin-bottom: 0.5rem;
+    }
+
+    .store-location {
+      font-size: 0.8rem;
+      color: #a0aec0;
+      margin-bottom: 0.8rem;
+    }
+
+    .store-stats {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .followers {
+      font-size: 0.85rem;
+      color: #4a5568;
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      color: #f59e0b;
+      font-size: 0.9rem;
+    }
+
+    .follow-btn {
+      background: #e2e8f0;
+      border: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #4a5568;
+    }
+
+    /* Responsividad */
+    @media (max-width: 768px) {
+      .profile-header {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+
+      .profile-pic {
+        width: 100px;
+        height: 100px;
+      }
+
+      .stats {
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .action-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-tabs {
+        flex-wrap: wrap;
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra superior -->
+  <div class="top-bar">
+    <button>⚙️</button>
+    <button>🔔</button>
+  </div>
+
+  <!-- Encabezado del perfil -->
+  <div class="profile-header">
+    <div class="online-status">🟢 En línea</div>
+    <img src="https://cdn.pixabay.com/photo/2016/11/29/03/35/girl-1867092_960_720.jpg" alt="Foto de perfil" class="profile-pic" />
+    <div class="user-info">
+      <h1>María González</h1>
+      <p>@mariagonzalez</p>
+    </div>    
+
+    <!-- Estadísticas -->
+    <div class="stats">
+      <div class="stat-item">
+        <div class="stat-number">847</div>
+        <div class="stat-label">Siguiendo</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">2.3K</div>
+        <div class="stat-label">Seguidores</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">156</div>
+        <div class="stat-label">Tiendas</div>
+      </div>
+    </div>
+
+    
+    <!-- Navegación -->
+    <div class="nav-tabs">
+      <div class="nav-tab active">🏠 Inicio</div>
+      <div class="nav-tab">👤 Perfil</div>
+      <div class="nav-tab">🛍️ Tiendas</div>
+    </div>
+  </div>
+
+  <!-- Sección Tiendas Favoritas -->
+  <div class="favorites-section">
+    <div class="section-header">
+      <h2 class="section-title"><span class="heart">❤️</span> Tiendas Favoritas <span style="color:#9c27b0; font-weight:500;">6</span></h2>
+      <span class="view-all">Ver todas →</span>
+    </div>
+
+    <div class="stores-grid">
+      <!-- Tienda 1 -->
+      <div class="store-card">
+        <div class="store-image">TechStore Pro</div>
+        <div class="store-info">
+          <h3 class="store-name">TechStore Pro</h3>
+          <p class="store-category">Electrónica</p>
+          <p class="store-location">📍 Madrid, España</p>
+          <div class="store-stats">
+            <span class="followers">2.5K seguidores</span>
+            <span class="rating">⭐ 4.8</span>
+          </div>
+          <button class="follow-btn">Siguiendo</button>
+        </div>
+      </div>
+
+      <!-- Tienda 2 -->
+      <div class="store-card">
+        <div class="store-image">Fashion Hub</div>
+        <div class="store-info">
+          <h3 class="store-name">Fashion Hub</h3>
+          <p class="store-category">Moda</p>
+          <p class="store-location">📍 Barcelona, España</p>
+          <div class="store-stats">
+            <span class="followers">5.1K seguidores</span>
+            <span class="rating">⭐ 4.6</span>
+          </div>
+          <button class="follow-btn">Siguiendo</button>
+        </div>
+      </div>
+
+      <!-- Tienda 3 -->
+      <div class="store-card">
+        <div class="store-image">Home & Garden</div>
+        <div class="store-info">
+          <h3 class="store-name">Home & Garden</h3>
+          <p class="store-category">Hogar</p>
+          <p class="store-location">📍 Valencia, España</p>
+          <div class="store-stats">
+            <span class="followers">1.8K seguidores</span>
+            <span class="rating">⭐ 4.9</span>
+          </div>
+          <button class="follow-btn">Siguiendo</button>
+        </div>
+      </div>
+
+      <!-- Tienda 4 -->
+      <div class="store-card">
+        <div class="store-image">Sports Zone</div>
+        <div class="store-info">
+          <h3 class="store-name">Sports Zone</h3>
+          <p class="store-category">Deportes</p>
+          <p class="store-location">📍 Sevilla, España</p>
+          <div class="store-stats">
+            <span class="followers">3.2K seguidores</span>
+            <span class="rating">⭐ 4.7</span>
+          </div>
+          <button class="follow-btn">Siguiendo</button>
+        </div>
+      </div>
+
+      <!-- Tienda 5 -->
+      <div class="store-card">
+        <div class="store-image">Book Paradise</div>
+        <div class="store-info">
+          <h3 class="store-name">Book Paradise</h3>
+          <p class="store-category">Libros</p>
+          <p class="store-location">📍 Bilbao, España</p>
+          <div class="store-stats">
+            <span class="followers">1.1K seguidores</span>
+            <span class="rating">⭐ 4.5</span>
+          </div>
+          <button class="follow-btn">Siguiendo</button>
+        </div>
+      </div>
+
+      <!-- Tienda 6 -->
+      <div class="store-card">
+        <div class="store-image">Gourmet Delights</div>
+        <div class="store-info">
+          <h3 class="store-name">Gourmet Delights</h3>
+          <p class="store-category">Alimentos</p>
+          <p class="store-location">📍 Málaga, España</p>
+          <div class="store-stats">
+            <span class="followers">2.9K seguidores</span>
+            <span class="rating">⭐ 4.9</span>
+          </div>
+          <button class="follow-btn">Siguiendo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
