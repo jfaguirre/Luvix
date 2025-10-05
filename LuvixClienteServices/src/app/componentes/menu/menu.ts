@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-menu',
-  standalone: true,
-  imports: [],
+  selector: 'app-menu',  
+  imports: [RouterModule],
   templateUrl: './menu.html',
-  styleUrl: './menu.css',  
+  styleUrl: './menu.css',    
 })
 export class Menu {
 

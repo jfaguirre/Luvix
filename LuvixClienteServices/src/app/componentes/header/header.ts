@@ -1,15 +1,13 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { Menu } from '../menu/menu';
 
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [RouterModule, Menu],
+  selector: 'app-header',  
+  imports: [],
   templateUrl: './header.html',
-  styleUrl: './header.css'
+  styleUrl: './header.css',  
 })
 export class Header {
-
+  
 }
