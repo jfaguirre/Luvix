@@ -4,7 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-contactanos',
   imports: [],
   templateUrl: './contactanos.html',
-  styleUrl: './contactanos.css'
+  styleUrl: './contactanos.css',
+  standalone: true,
 })
 export class Contactanos {
 

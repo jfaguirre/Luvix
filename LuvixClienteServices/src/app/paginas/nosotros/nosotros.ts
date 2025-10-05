@@ -4,7 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-nosotros',
   imports: [],
   templateUrl: './nosotros.html',
-  styleUrl: './nosotros.css'
+  styleUrl: './nosotros.css',
+  standalone: true,
 })
 export class Nosotros {
 

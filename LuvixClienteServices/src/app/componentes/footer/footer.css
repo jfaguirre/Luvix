@@ -28,7 +28,11 @@
 
         .footer-logo-inner {
             width: 2.5rem;
-            height: 2.5rem;                        
+            height: 2.5rem;
+        }
+
+        .footer-logo-inner img {
+          width: 2.5rem;
         }
 
         .footer-heading {
