@@ -1,9 +1,9 @@
  <section class="hero">
     <div class="hero-container">
         <div class="hero-image">
-          <img [src]="fotoUrl | async" alt="Luvix" class="imagen_perfil">
-          <input type="file" #fileInput accept="image/*" (change)="onFileSelected($event)">
-          <button (click)="fileInput.click()" class="btn-cambiar">Cambiar foto</button>
+          <img [src]="fotoUrl" alt="Luvix" class="imagen_perfil">
+          <input type="file" #fileInput accept="image/*" (change)="onFileSelected($event)" style="display: none;">
+          <button (click)="fileInput.click()" class="btn-cambiar"><i class="bi bi-camera2"></i></button>
         </div>
     </div>
   </section>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LuvixApiServices")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+90f0d702e0c38b8f554274702602e8476efb3b58")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0e47ebc922d204bae702d43453ee55a6d9100dbd")]
 [assembly: System.Reflection.AssemblyProductAttribute("LuvixApiServices")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LuvixApiServices")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
