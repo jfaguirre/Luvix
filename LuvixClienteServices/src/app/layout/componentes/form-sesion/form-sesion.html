@@ -1,0 +1,38 @@
+<form (submit)="sesionUsuario()" [formGroup]="sesionForm" id="loginForm" class="login-form">
+  <div class="form-group">
+      <label for="email" class="form-label">Correo electrónico</label>
+      <input name="email" formControlName="email" type="email" id="email" class="form-input" placeholder="tu@email.com" required>
+      @if(sesionForm.controls['email'].touched) {
+        <div class="text-danger">
+            @if(sesionForm.controls["email"].errors?.['required']) {
+              <span>El correo es requerido.</span>
+            }
+            @if(sesionForm.controls["email"].errors?.['email']) {
+              <span>Debes ingresar un correo valido.</span>
+            }
+        </div>
+        }
+  </div>
+
+  <div class="form-group">
+      <label for="password" class="form-label">Contraseña</label>
+      <input name="password" formControlName="password" type="password" id="password" class="form-input" placeholder="••••••••" required>
+      @if(sesionForm.controls['password'].touched) {
+      <div class="text-danger">
+            @if(sesionForm.controls["password"].errors?.['required']) {
+              <span>El password de usuario es requerido.</span>
+            }
+      </div>
+      }
+  </div>
+
+  <div class="remember-forgot">
+      <div class="remember-container">
+          <input type="checkbox" id="remember" class="remember-checkbox">
+          <label for="remember" class="remember-label">Recordarme</label>
+      </div>
+      <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
+  </div>
+
+  <button type="submit" class="login-btn">Iniciar Sesión</button>
+</form>

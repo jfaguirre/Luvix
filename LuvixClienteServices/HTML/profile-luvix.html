@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LUVIX - Perfil</title>
+  <link rel="stylesheet" href="css_proyecto/perfil.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+<!-- Barra superior -->
+<header class="navbar">
+     <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <div class="logo">
+                    <div class="logo-square">
+                        <div class="logo-inner">LOGO</div>
+                    </div>
+                    <span class="brand">Luvix</span>
+                </div>
+            </div>
+        </div>
+      </nav>
+      
+  <div class="nav-icons">
+      <button id="btnTienda"><i class="fa-solid fa-store"></i> Abrir Tienda</button>
+    <button id="btnServicio"><i class="fa-solid fa-briefcase"></i> Abrir Servicio</button>
+  </div>
+
+<!-- responsive dentro de menu de accesos rapido -->
+ <div class="nav-menu-btn" id="navMenuToggle">
+   <div>
+  <i class="fas fa-bars"></i>
+</div>
+</div>
+<div class="nav-responsive-sidebar" id="navResponsiveSidebar">
+  <ul>
+    <li><a href="vendedor.html">Inicio</a></li>
+    <li><a href="Tiendas.html">Tiendas</a></li>
+     <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="MisTiendas.html">Mis Tiendas</a></li>
+       <li><a href="Mis Servicios.html">Mis Servicios</a></li>
+    <li><button class="btnTiendaResponsive"><i class="fa-solid fa-store"></i> Abrir Tienda</button></li>
+    <li><button class="btnServicioResponsive"><i class="fa-solid fa-briefcase"></i> Abrir Servicio</button></li>
+  </ul>
+</div>
+
+
+</header>
+
+<div class="profile-container">
+  <!-- Portada -->
+  <div class="cover-container">
+    <img src="" class="cover-img">
+    <input type="file" id="coverInput" accept="image/*" hidden>
+  </div>
+
+  <!-- Foto de perfil -->
+  <div class="profile-header">
+    <div class="profile-pic-container">
+      <img src="" class="profile-pic">
+      <input type="file" id="profileInput" accept="image/*" hidden>
+    </div>
+    <div class="user-info">
+      <h2 class="username">Oscar López Ramírez</h2>
+      <p class="user-bio">Desarrollador web apasionado por la tecnología y el diseño.</p>
+      <button class="edit-btn"><i class="fa-solid fa-user-pen"></i> Editar Perfil</button>
+    </div>
+  </div>
+
+  <!-- Información adicional -->
+  <h3 class="section"><i class="fa-solid fa-id-card"></i> Información personal</h3>
+  <div class="info-card">
+    <div class="info-item" data-key="ubicacion"><i class="fa-solid fa-location-dot"></i> <span>San Salvador, El Salvador</span></div>
+    <div class="info-item" data-key="puesto"><i class="fa-solid fa-briefcase"></i> <span>Desarrollador Front-End</span></div>
+    <div class="info-item" data-key="correo"><i class="fa-solid fa-envelope"></i> <span>correo@ejemplo.com</span></div>
+  </div>
+</div>
+
+<h2 class="section-title">Tiendas que sigues</h2>
+<div class="stores-grid">
+  <div class="store-card">
+    <div class="store-banner"></div>
+    <div class="store-info">
+      <div class="store-name">Moda Urbana</div>
+      <div class="store-desc">Ropa y accesorios</div>
+    </div>
+  </div>
+  <div class="store-card">
+    <div class="store-banner"></div>
+    <div class="store-info">
+      <div class="store-name">Tecnología Plus</div>
+      <div class="store-desc">Gadgets y electrónica</div>
+    </div>
+  </div>
+</div>
+
+<aside class="sidebar-right">
+  <h3>Accesos rápidos</h3>
+  <ul>
+    <li><a href="vendedor.html">Inicio</a></li>
+    <li><a href="Tiendas.html">Tiendas</a></li>
+    <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="MisTiendas.html">Mis Tiendas</a></li>
+       <li><a href="Mis Servicios.html">Mis Servicios</a></li>
+  </ul>
+</aside>
+
+<!-- Modal para crear tienda -->
+<div id="modalTienda" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeTienda">&times;</span>
+    <h2><i class="fa-solid fa-store"></i> Crear tu Tienda</h2>
+    <p>Llena los detalles de tu tienda para comenzar a vender.</p>
+    <form id="formTienda">
+      <div class="input-group">
+        <i class="fa-solid fa-tag"></i>
+        <input type="text" placeholder="Nombre de la tienda" required>
+      </div>
+      <div class="input-group">
+        <i class="fa-solid fa-align-left"></i>
+        <textarea placeholder="Descripción de la tienda" required></textarea>
+      </div>
+      <div class="input-group">
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" id="passwordTienda" placeholder="Contraseña segura" required>
+      </div>
+      <small id="errorTienda" class="error-msg"></small>
+      <button type="submit"><i class="fa-solid fa-check"></i> Crear Tienda</button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal para servicio profesional -->
+<div id="modalServicio" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeServicio">&times;</span>
+    <h2><i class="fa-solid fa-briefcase"></i> Servicio Profesional</h2>
+    <p>Registra tu servicio para que los clientes puedan contratarte.</p>
+    <form id="formServicio">
+      <div class="input-group">
+        <i class="fa-solid fa-pen-to-square"></i>
+        <input type="text" placeholder="Nombre del servicio" required>
+      </div>
+      <div class="input-group">
+        <i class="fa-solid fa-align-left"></i>
+        <textarea placeholder="Descripción del servicio" required></textarea>
+      </div>
+      <div class="input-group">
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" id="passwordServicio" placeholder="Contraseña segura" required>
+      </div>
+      <small id="errorServicio" class="error-msg"></small>
+      <button type="submit"><i class="fa-solid fa-check"></i> Registrar Servicio</button>
+    </form>
+  </div>
+</div>
+
+
+<script src="js/tienda.js"></script>
+<script src="js/proyecto.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const coverInput = document.getElementById("coverInput");
+  const profileInput = document.getElementById("profileInput");
+  const coverImg = document.querySelector(".cover-img");
+  const profilePic = document.querySelector(".profile-pic");
+  const editProfileBtn = document.querySelector(".edit-btn");
+
+  // Crear modal dinámicamente
+  const modal = document.createElement("div");
+  modal.className = "modal";
+  modal.innerHTML = `
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2><i class="fa-solid fa-user-pen"></i> Editar Perfil</h2>
+
+      <div class="input-group">
+        <i class="fa-solid fa-user"></i>
+        <input type="text" id="editName" placeholder="Nombre completo">
+      </div>
+      <div class="input-group">
+        <i class="fa-solid fa-align-left"></i>
+        <textarea id="editBio" placeholder="Descripción / Biografía"></textarea>
+      </div>
+
+      <h3 style="margin-top:15px;">Información personal</h3>
+      <div class="input-group">
+        <i class="fa-solid fa-location-dot"></i>
+        <input type="text" id="editUbicacion" placeholder="Ubicación">
+      </div>
+      <div class="input-group">
+        <i class="fa-solid fa-briefcase"></i>
+        <input type="text" id="editPuesto" placeholder="Puesto / Rol">
+      </div>
+      <div class="input-group">
+        <i class="fa-solid fa-envelope"></i>
+        <input type="email" id="editCorreo" placeholder="Correo electrónico">
+      </div>
+
+      <button id="saveProfile">Guardar Cambios</button>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  const closeModal = modal.querySelector(".close");
+  const saveBtn = modal.querySelector("#saveProfile");
+
+  // Cambiar portada
+  document.querySelector(".cover-container").addEventListener("click", () => coverInput.click());
+  coverInput.addEventListener("change", e => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => coverImg.src = reader.result;
+      reader.readAsDataURL(file);
+    }
+  });
+
+  // Cambiar foto de perfil
+  document.querySelector(".profile-pic-container").addEventListener("click", () => profileInput.click());
+  profileInput.addEventListener("change", e => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => profilePic.src = reader.result;
+      reader.readAsDataURL(file);
+    }
+  });
+
+  // Abrir modal con datos actuales
+  editProfileBtn.addEventListener("click", () => {
+    modal.style.display = "block";
+
+    modal.querySelector("#editName").value = document.querySelector(".username").textContent;
+    modal.querySelector("#editBio").value = document.querySelector(".user-bio")?.textContent || "";
+
+    const infoCard = document.querySelector(".info-card");
+    modal.querySelector("#editUbicacion").value = infoCard.querySelector('[data-key="ubicacion"] span').textContent;
+    modal.querySelector("#editPuesto").value = infoCard.querySelector('[data-key="puesto"] span').textContent;
+    modal.querySelector("#editCorreo").value = infoCard.querySelector('[data-key="correo"] span').textContent;
+  });
+
+  // Cerrar modal
+  closeModal.addEventListener("click", () => modal.style.display = "none");
+  window.addEventListener("click", e => { if (e.target === modal) modal.style.display = "none"; });
+
+  // Validación de correo
+  function validarEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  }
+
+  // Guardar cambios
+  saveBtn.addEventListener("click", () => {
+    const name = modal.querySelector("#editName").value.trim();
+    const bio = modal.querySelector("#editBio").value.trim();
+    const correo = modal.querySelector("#editCorreo").value.trim();
+
+    if (correo && !validarEmail(correo)) {
+      alert("Por favor ingrese un correo electrónico válido.");
+      return;
+    }
+
+    // Nombre y biografía
+    if (name) document.querySelector(".username").textContent = name;
+    if (bio) document.querySelector(".user-bio").textContent = bio;
+
+    // Información personal adicional
+    const infoCard = document.querySelector(".info-card");
+    infoCard.querySelector('[data-key="ubicacion"] span').textContent = modal.querySelector("#editUbicacion").value.trim();
+    infoCard.querySelector('[data-key="puesto"] span').textContent = modal.querySelector("#editPuesto").value.trim();
+    infoCard.querySelector('[data-key="correo"] span').textContent = correo;
+
+    modal.style.display = "none";
+  });
+});
+</script>
+
+</body>
+</html>
+
