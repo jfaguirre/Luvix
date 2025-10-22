@@ -2,7 +2,7 @@
   {
     "ContainingType": "LuvixApiServices.Controllers.AccesoController",
     "Method": "Login",
-    "RelativePath": "api/Acceso/Login",
+    "RelativePath": "api/Acceso/login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -18,7 +18,7 @@
   {
     "ContainingType": "LuvixApiServices.Controllers.AccesoController",
     "Method": "Registrarse",
-    "RelativePath": "api/Acceso/Registrarse",
+    "RelativePath": "api/Acceso/registrarse",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -52,9 +52,9 @@
     ]
   },
   {
-    "ContainingType": "LuvixApiServices.Controllers.ActualizarUsuarioController",
+    "ContainingType": "LuvixApiServices.Controllers.UsuarioController",
     "Method": "UpdateUsuario",
-    "RelativePath": "api/ActualizarUsuario/{id}",
+    "RelativePath": "api/Usuario/actualizar-usuario/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -73,9 +73,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "LuvixApiServices.Controllers.BorrarUsuarioController",
+    "ContainingType": "LuvixApiServices.Controllers.UsuarioController",
     "Method": "DeleteUsuario",
-    "RelativePath": "api/BorrarUsuario/{id}",
+    "RelativePath": "api/Usuario/borrar-usuario/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -89,13 +89,45 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "LuvixApiServices.Controllers.MostrarUsuariosController",
+    "ContainingType": "LuvixApiServices.Controllers.UsuarioController",
     "Method": "Lista",
-    "RelativePath": "api/MostrarUsuarios/lista-usuarios",
+    "RelativePath": "api/Usuario/lista-usuarios",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LuvixApiServices.Controllers.UsuarioController",
+    "Method": "SubirFoto",
+    "RelativePath": "api/Usuario/subir-foto",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LuvixApiServices.Controllers.UsuarioController",
+    "Method": "Obtener",
+    "RelativePath": "api/Usuario/usuario-id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

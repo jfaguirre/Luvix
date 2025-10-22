@@ -1,8 +1,11 @@
-﻿namespace LuvixApiServices.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace LuvixApiServices.Models
 {
     public class Rol
     {
         public int Id { get; set; }
+        [StringLength(25)]
         public string Nombre { get; set; } = string.Empty;
 
         // Colección de usuarios con este rol

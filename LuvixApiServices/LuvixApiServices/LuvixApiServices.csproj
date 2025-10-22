@@ -15,7 +15,12 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="MySql.Data" Version="9.4.0" />
     <PackageReference Include="NSwag.AspNetCore" Version="14.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\fotos-perfil\" />
   </ItemGroup>
 
 </Project>

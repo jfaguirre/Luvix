@@ -1,16 +1,23 @@
 ﻿
+using System.ComponentModel.DataAnnotations;
+
 namespace LuvixApiServices.Models
 {
     public class Usuario
     {
         public int Id { get; set; }
+        [StringLength(50)]
         public string Nombre { get; set; } = null!;
+        [StringLength(50)]
         public string Apellido { get; set; } = null!;
+        public string Genero { get; set; } = null!;
+        [StringLength(255)]
         public string Email { get; set; } = null!;
+        [StringLength(255)]
         public string Password { get; set; } = null!;
         public string? FotoPerfil { get; set; } = null;
         public DateTime FechaRegistro { get; set; }
-        public string Estado { get; set; } = "activo";
+        public string Estado { get; set; } = null!;
 
         // Navegación
         public ICollection<Tienda> Tiendas { get; set; } = new List<Tienda>();

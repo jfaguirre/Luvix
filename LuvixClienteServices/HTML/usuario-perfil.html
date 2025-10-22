@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Futurista</title>
+    <style>
+        :root {
+            --primary-cyan: #06b6d4;
+            --primary-cyan-dark: #0891b2;
+            --primary-purple: #8b5cf6;
+            --primary-purple-dark: #7c3aed;
+            --neon-blue: #0ea5e9;
+            --neon-purple: #a855f7;
+            --dark-bg: #0f172a;
+            --darker-bg: #0b1120;
+            --card-bg: #1e293b;
+            --card-bg-hover: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-tertiary: #94a3b8;
+            --accent-glow: rgba(6, 182, 212, 0.3);
+            --purple-glow: rgba(139, 92, 246, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+            min-height: 100vh;
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        /* Futuristic Background Elements */
+        .grid-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                linear-gradient(rgba(15, 23, 42, 0.8) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(15, 23, 42, 0.8) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .floating-orbs {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.15;
+        }
+
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--neon-blue);
+            top: 10%;
+            left: 5%;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .orb-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--neon-purple);
+            bottom: 10%;
+            right: 5%;
+            animation: float 20s infinite ease-in-out reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(20px, 20px); }
+            50% { transform: translate(-20px, 20px); }
+            75% { transform: translate(20px, -20px); }
+        }
+
+        /* Header Section */
+        .header {
+            position: relative;
+            padding: 80px 20px 40px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(11, 17, 32, 0.9) 0%, rgba(15, 23, 42, 0.7) 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .profile-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 32px;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            background: linear-gradient(45deg, var(--primary-cyan), var(--primary-purple), var(--neon-blue));
+            padding: 3px;
+            position: relative;
+            box-shadow:
+                0 0 30px var(--accent-glow),
+                0 0 60px var(--purple-glow);
+        }
+
+        .profile-image-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: var(--darker-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            font-weight: bold;
+            color: var(--text-primary);
+            background-image: url('https://placehold.co/180x180/1e293b/f8fafc?text=MG');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .profile-badge {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            width: 32px;
+            height: 32px;
+            background: var(--primary-cyan);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid var(--darker-bg);
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        .profile-badge-icon {
+            width: 16px;
+            height: 16px;
+            color: var(--darker-bg);
+        }
+
+        .user-name {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+        }
+
+        .user-username {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .user-username-icon {
+            color: var(--primary-cyan);
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Stats Section */
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 28px;
+            text-align: center;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-cyan), var(--primary-purple), transparent);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(139, 92, 246, 0.4);
+            background: var(--card-bg-hover);
+        }
+
+        .stat-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .stat-icon {
+            width: 32px;
+            height: 32px;
+            margin: 0 auto 16px;
+            color: var(--primary-cyan);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--text-tertiary);
+            font-weight: 500;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-cyan), var(--primary-purple));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 24px auto 0;
+            font-size: 1.125rem;
+            line-height: 1.6;
+        }
+
+        /* Stores Grid */
+        .stores-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 32px;
+        }
+
+        @media (min-width: 768px) {
+            .stores-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .stores-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1600px) {
+            .stores-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .store-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .store-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg,
+                rgba(6, 182, 212, 0.1) 0%,
+                rgba(139, 92, 246, 0.1) 50%,
+                rgba(6, 182, 212, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+
+        .store-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow:
+                0 20px 40px rgba(0, 0, 0, 0.4),
+                0 0 30px var(--accent-glow),
+                0 0 40px var(--purple-glow);
+            border-color: rgba(139, 92, 246, 0.4);
+        }
+
+        .store-card:hover::before {
+            opacity: 1;
+        }
+
+        .store-image-container {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .store-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .store-card:hover .store-image {
+            transform: scale(1.1);
+        }
+
+        .like-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .like-button:hover {
+            background: rgba(6, 182, 212, 0.3);
+            border-color: var(--primary-cyan);
+            transform: scale(1.1);
+        }
+
+        .like-icon {
+            width: 20px;
+            height: 20px;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .like-button:hover .like-icon {
+            color: var(--primary-cyan);
+            transform: scale(1.2);
+        }
+
+        .store-content {
+            padding: 24px;
+        }
+
+        .store-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .store-category {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            color: var(--primary-cyan);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .store-category-icon {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+        }
+
+        .store-description {
+            color: var(--text-tertiary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            min-height: 60px;
+        }
+
+        .store-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid rgba(148, 163, 184, 0.2);
+        }
+
+        .like-count {
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+        }
+
+        .view-button {
+            background: linear-gradient(45deg, var(--primary-cyan), var(--primary-purple));
+            color: var(--text-primary);
+            border: none;
+            padding: 8px 20px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .view-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .view-button:hover::before {
+            left: 100%;
+        }
+
+        .view-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(6, 182, 212, 0.4);
+        }
+
+        /* Glowing effect for interactive elements */
+        .glow {
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(var(--primary-cyan), var(--primary-purple));
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="grid-background"></div>
+    <div class="floating-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="profile-container">
+            <div class="profile-image">
+                <div class="profile-image-inner"></div>
+            </div>
+            <div class="profile-badge">
+                <svg class="profile-badge-icon" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+        </div>
+        <h1 class="user-name">MARÍA GONZÁLEZ</h1>
+        <div class="user-username">
+            <svg class="user-username-icon" viewBox="0 0 24 24">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 6l-10 7L2 6"></path>
+            </svg>
+            <span>@mariagonzalez</span>
+        </div>
+    </header>
+
+    <!-- Stats Section -->
+    <div class="stats-container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <svg class="stat-icon" viewBox="0 0 24 24">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <div class="stat-value">24</div>
+                <div class="stat-label">SIGUIENDO</div>
+            </div>
+            <div class="stat-card">
+                <svg class="stat-icon" viewBox="0 0 24 24">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM12 14a7 7 0 0 0-7 7h14a7 7 0 0 0-7-7z"></path>
+                </svg>
+                <div class="stat-value">156</div>
+                <div class="stat-label">SEGUIDORES</div>
+            </div>
+            <div class="stat-card">
+                <svg class="stat-icon" viewBox="0 0 24 24">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <div class="stat-value">8</div>
+                <div class="stat-label">TIENDAS</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content - Stores Section -->
+    <main class="main-content">
+        <div class="section-header">
+            <h2 class="section-title">TIENDAS QUE SIGUES</h2>
+            <p class="section-subtitle">Descubre las últimas novedades de tus tiendas favoritas en este ecosistema digital avanzado</p>
+        </div>
+
+        <div class="stores-grid">
+            <!-- Store Card 1 -->
+            <div class="store-card">
+                <div class="store-image-container">
+                    <img src="https://placehold.co/400x220/0ea5e9/0f172a?text=MODA+URBANA" alt="Moda Urbana" class="store-image">
+                    <button class="like-button">
+                        <svg class="like-icon" viewBox="0 0 24 24">
+                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="store-content">
+                    <h3 class="store-name">MODA URBANA</h3>
+                    <div class="store-category">
+                        <svg class="store-category-icon" viewBox="0 0 24 24">
+                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        ROPA Y ACCESORIOS
+                    </div>
+                    <p class="store-description">Tienda especializada en moda urbana y streetwear para jóvenes. Innovación y estilo en cada colección.</p>
+                    <div class="store-footer">
+                        <span class="like-count">124 ME GUSTA</span>
+                        <button class="view-button">VER TIENDA</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Store Card 2 -->
+            <div class="store-card">
+                <div class="store-image-container">
+                    <img src="https://placehold.co/400x220/10b981/0f172a?text=GOURMET+DELIGHTS" alt="Gourmet Delights" class="store-image">
+                    <button class="like-button">
+                        <svg class="like-icon" viewBox="0 0 24 24">
+                            <path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="store-content">
+                    <h3 class="store-name">GOURMET DELIGHTS</h3>
+                    <div class="store-category">
+                        <svg class="store-category-icon" viewBox="0 0 24 24">
+                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        ALIMENTOS Y BEBIDAS
+                    </div>
+                    <p class="store-description">Productos gourmet artesanales y orgánicos de alta calidad. Experiencia culinaria premium.</p>
+                    <div class="store-footer">
+                        <span class="like-count">89 ME GUSTA</span>
+                        <button class="view-button">VER TIENDA</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Store Card 3 -->
+            <div class="store-card">
+                <div class="store-image-container">
+                    <img src="https://placehold.co/400x220/8b5cf6/0f172a?text=TECH+HAVEN" alt="Tech Haven" class="store-image">
+                    <button class="like-button">
+                        <svg class="like-icon" viewBox="0 0 24 24">
+                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="store-content">
+                    <h3 class="store-name">TECH HAVEN</h3>
+                    <div class="store-category">
+                        <svg class="store-category-icon" viewBox="0 0 24 24">
+                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        ELECTRÓNICA
+                    </div>
+                    <p class="store-description">Última tecnología en gadgets, smartphones y accesorios. Innovación al alcance de tu mano.</p>
+                    <div class="store-footer">
+                        <span class="like-count">203 ME GUSTA</span>
+                        <button class="view-button">VER TIENDA</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Store Card 4 -->
+            <div class="store-card">
+                <div class="store-image-container">
+                    <img src="https://placehold.co/400x220/ec4899/0f172a?text=BELLEZA+NATURAL" alt="Belleza Natural" class="store-image">
+                    <button class="like-button">
+                        <svg class="like-icon" viewBox="0 0 24 24">
+                            <path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="store-content">
+                    <h3 class="store-name">BELLEZA NATURAL</h3>
+                    <div class="store-category">
+                        <svg class="store-category-icon" viewBox="0 0 24 24">
+                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        COSMÉTICOS
+                    </div>
+                    <p class="store-description">Productos de belleza naturales y ecológicos para el cuidado personal. Belleza sostenible.</p>
+                    <div class="store-footer">
+                        <span class="like-count">156 ME GUSTA</span>
+                        <button class="view-button">VER TIENDA</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,121 @@
+
+<form (submit)="guardarCambio()" [formGroup]="userForm" id="registerForm" class="register-form">
+    <div class="form-group">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input name="nombre" formControlName="nombre" type="text" id="nombre" class="form-input" placeholder="Tu nombre" required maxlength="50" minlength="3">
+        <div class="text-danger">
+            @if(userForm.controls["nombre"].errors?.['required'] && userForm.get('nombre')?.touched) {
+              <span>El nombre de usuario es requerido.</span>
+            }
+            @if(userForm.controls["nombre"].errors?.['maxLengthCustom']) {
+              <span>El nombre debe tener un maximo de 50 caracteres.</span>
+            }
+            @if(userForm.controls["nombre"].errors?.['minLengthCustom']) {
+              <span>El nombre debe tener un minimo de 3 caracteres.</span>
+            }
+            @if(userForm.controls["nombre"].errors?.['nombreInvalido']) {
+              <span>El nombre solo acepta letras y espacios validos.</span>
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="lastName" class="form-label">Apellido</label>
+        <input name="apellido" formControlName="apellido" type="text" id="lastName" class="form-input" placeholder="Tu apellido" required maxlength="50" minlength="3">
+        <div class="text-danger">
+            @if(userForm.controls["apellido"].errors?.['required'] && userForm.get('apellido')?.touched) {
+              <span>El apellido de usuario es requerido.</span>
+            }
+            @if(userForm.controls["apellido"].errors?.['maxLengthCustom']) {
+              <span>El apellido debe tener un maximo de 50 caracteres.</span>
+            }
+            @if(userForm.controls["apellido"].errors?.['minLengthCustom']) {
+              <span>El apellido debe tener un minimo de 3 caracteres.</span>
+            }
+            @if(userForm.controls["apellido"].errors?.['apellidoInvalido']) {
+              <span>El apellido solo puede contener letras y espacios válidos.</span>
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="gender" class="form-label">Género</label>
+        <select name="genero" formControlName="genero" id="gender" class="form-select" required>
+            <option value="">Selecciona tu género</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+        </select>
+        @if(userForm.controls['genero'].touched) {
+        <div class="text-danger">
+            @if(userForm.controls["genero"].errors?.['required']) {
+              <span>Debe especificar un genero.</span>
+            }
+        </div>
+        }
+    </div>
+
+    <div class="form-group">
+        <label for="email" class="form-label">Correo electrónico</label>
+        <input name="email" formControlName="email" type="email" id="email" class="form-input" placeholder="tu@email.com" required minlength="3" maxlength="255">
+        <div class="text-danger">
+            @if(userForm.controls["email"].errors?.['required'] && userForm.get('email')?.touched) {
+              <span>El correo es requerido.</span>
+            }
+            @if(userForm.controls["email"].errors?.['maxLength']) {
+              <span>El correo debe tener un maximo de 255 caracteres.</span>
+            }
+            @if(userForm.controls["email"].errors?.['minLength']) {
+              <span>El correo debe tener un minimo de 3 caracteres.</span>
+            }
+            @if(userForm.controls["email"].errors?.['email']) {
+              <span>Debes ingresar un correo valido.</span>
+            }
+            @if(userForm.controls["email"].errors?.['emailInvalido']) {
+              <span>El formato del correo electrónico no es válido.</span>
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="password" class="form-label">Contraseña</label>
+        <input name="password" formControlName="password" type="password" id="password" class="form-input" placeholder="••••••••" required minlength="8" maxlength="255">
+        <div class="text-danger">
+            @if(userForm.controls["password"].errors?.['required'] && userForm.get('password')?.touched) {
+              <span>El password de usuario es requerido.</span>
+            }
+            @if(userForm.controls["password"].errors?.['maxLength']) {
+              <span>El password debe tener un maximo de 255 caracteres.</span>
+            }
+            @if(userForm.controls["password"].errors?.['minLength']) {
+              <span>El password debe tener un minimo de 8 caracteres.</span>
+            }
+            @if(userForm.controls["password"].errors?.['passwordInvalido']) {
+              <span>La contraseña debe tener al menos una mayúscula, minúsculas, un número y un carácter especial y minimo 8 caracteres.</span>
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="confirmPassword" class="form-label">Repetir contraseña</label>
+        <input name="password_confirmacion" formControlName="password_confirmacion" type="password" id="confirmPassword" class="form-input" placeholder="••••••••" required>
+        <div class="text-danger">
+            @if(userForm.controls["password_confirmacion"].errors?.['required'] && userForm.get('password_confirmacion')?.touched) {
+              <span>La confirmacion del password de usuario es requerido.</span>
+            }
+            @if(userForm.hasError('confirmPasswordValido') && userForm.get('password_confirmacion')?.touched){
+              <span>La password debe ser igual..</span>
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" [disabled]="userForm.invalid" class="register-btn">Crear Cuenta</button>
+      @if(userForm.controls['password'].touched) {
+        <div class="text-danger">
+            @if(userForm.invalid) {
+              <span style="display: flex; justify-content: center;">Debe llenar todos los campos.</span>
+            }
+        </div>
+      }
+    </div>
+</form>

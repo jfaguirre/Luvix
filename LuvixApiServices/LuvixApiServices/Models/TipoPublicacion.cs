@@ -1,9 +1,13 @@
-﻿namespace LuvixApiServices.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace LuvixApiServices.Models
 {
     public class TipoPublicacion
     {
         public int Id { get; set; }
-        public string Nombre { get; set; } = "post";
+        [StringLength(50)]
+        public string Nombre { get; set; } = null!;
+        [StringLength(200)]
         public string Descripcion { get; set; } = null!;
 
         // Navegación

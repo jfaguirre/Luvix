@@ -35,7 +35,8 @@ namespace LuvixApiServices.Migrations
 
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
 
                     b.HasKey("Id");
 
@@ -151,7 +152,8 @@ namespace LuvixApiServices.Migrations
 
                     b.Property<string>("MensajeTexto")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.HasKey("Id");
 
@@ -176,11 +178,13 @@ namespace LuvixApiServices.Migrations
 
                     b.Property<string>("Descripcion")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
@@ -223,7 +227,8 @@ namespace LuvixApiServices.Migrations
 
                     b.Property<string>("Contenido")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<string>("Estado")
                         .IsRequired()
@@ -240,7 +245,8 @@ namespace LuvixApiServices.Migrations
 
                     b.Property<string>("Titulo")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 
@@ -261,7 +267,8 @@ namespace LuvixApiServices.Migrations
 
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
 
                     b.HasKey("Id");
 
@@ -389,14 +396,16 @@ namespace LuvixApiServices.Migrations
 
                     b.Property<string>("Descripcion")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
                     b.HasKey("Id");
 
@@ -1352,7 +1361,8 @@ namespace LuvixApiServices.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Descripcion")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("Estado")
                         .IsRequired()
@@ -1372,7 +1382,8 @@ namespace LuvixApiServices.Migrations
 
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Portada")
                         .HasColumnType("nvarchar(max)");
@@ -1396,11 +1407,13 @@ namespace LuvixApiServices.Migrations
 
                     b.Property<string>("Descripcion")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
@@ -1417,11 +1430,13 @@ namespace LuvixApiServices.Migrations
 
                     b.Property<string>("Apellido")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Estado")
                         .IsRequired()
@@ -1433,13 +1448,19 @@ namespace LuvixApiServices.Migrations
                     b.Property<string>("FotoPerfil")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Nombre")
+                    b.Property<string>("Genero")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.HasKey("Id");
 
@@ -1453,6 +1474,7 @@ namespace LuvixApiServices.Migrations
                             Email = "jfaguirrex@outlook.com",
                             Estado = "activo",
                             FechaRegistro = new DateTime(2025, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Genero = "Masculino",
                             Nombre = "Juan Francisco",
                             Password = "Admin2025@"
                         },
@@ -1463,6 +1485,7 @@ namespace LuvixApiServices.Migrations
                             Email = "mesantana@gmail.com",
                             Estado = "activo",
                             FechaRegistro = new DateTime(2025, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Genero = "Femenino",
                             Nombre = "Margarita Elizabeth",
                             Password = "Admin2025@"
                         },
@@ -1473,6 +1496,7 @@ namespace LuvixApiServices.Migrations
                             Email = "aycastellanos@gmail.com",
                             Estado = "activo",
                             FechaRegistro = new DateTime(2025, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Genero = "Femenino",
                             Nombre = "Andrea Yamileth",
                             Password = "Admin2025@"
                         },
@@ -1483,6 +1507,7 @@ namespace LuvixApiServices.Migrations
                             Email = "asgarcia@gmail.com",
                             Estado = "activo",
                             FechaRegistro = new DateTime(2025, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Genero = "Femenino",
                             Nombre = "Alisson Stefany",
                             Password = "Admin2025@"
                         },
@@ -1493,6 +1518,7 @@ namespace LuvixApiServices.Migrations
                             Email = "frguerrero@gmail.com",
                             Estado = "activo",
                             FechaRegistro = new DateTime(2025, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Genero = "Femenino",
                             Nombre = "Fátima Roció",
                             Password = "Admin2025@"
                         },
@@ -1503,6 +1529,7 @@ namespace LuvixApiServices.Migrations
                             Email = "ryechegoyen@gmail.com",
                             Estado = "activo",
                             FechaRegistro = new DateTime(2025, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Genero = "Masculino",
                             Nombre = "Rodrigo Yohalmo",
                             Password = "Admin2025@"
                         },
@@ -1513,6 +1540,7 @@ namespace LuvixApiServices.Migrations
                             Email = "odlopez@gmail.com",
                             Estado = "activo",
                             FechaRegistro = new DateTime(2025, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Genero = "Masculino",
                             Nombre = "Oscar Daniel",
                             Password = "Admin2025@"
                         });

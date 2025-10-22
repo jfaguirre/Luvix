@@ -24,20 +24,36 @@ namespace LuvixApiServices.Controllers
             _utilidades = utilidades;
         }
 
-        // POST: api/Acceso/Registrar
+        // POST: api/acceso/registrar
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [Route("Registrarse")]
-        public async Task<IActionResult> Registrarse(CrearUsuarioDTO objeto)
+        [Route("registrarse")]
+        
+        public async Task<IActionResult> Registrarse([FromBody] CrearUsuarioDTO objeto)
         {
+
+            // Validar modelo DTO
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new { mensaje = "Datos inválidos.", errores = ModelState });
+            }
+
+            // Verificar si el email ya existe
+            var existeEmail = await _AppDbContext.Usuarios.AnyAsync(u => u.Email == objeto.Email);
+            if (existeEmail)
+            {
+                return BadRequest(new { mensaje = "El correo electrónico ya está registrado." });
+            }
+
             try
             {
                 var usuario = new Usuario
                 {
                     Nombre = objeto.Nombre,
                     Apellido = objeto.Apellido,
+                    Genero = objeto.Genero,
                     Email = objeto.Email,
                     Password = _utilidades.encriptarSHA256(objeto.Password),
                     FotoPerfil = null,  
@@ -56,11 +72,17 @@ namespace LuvixApiServices.Controllers
             }            
         }
 
-        // POST: api/Acceso/Login
+        // POST: api/acceso/login
         [HttpPost]
-        [Route("Login")]
-        public async Task<IActionResult> Login(LoginUsuarioDTO objeto)
+        [Route("login")]
+        public async Task<IActionResult> Login([FromBody] LoginUsuarioDTO objeto)
         {
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new { mensaje = "Credenciales inválidas." });
+            }
+
             var usuarioEncontrado = await _AppDbContext.Usuarios
                 .Where(u =>
                 u.Email == objeto.Email &&
@@ -70,10 +92,11 @@ namespace LuvixApiServices.Controllers
             {
                 return StatusCode(StatusCodes.Status200OK, new { mensaje = "El correo o password ingresado son incorrectos.", token = "" });               
             }
-            else
-            {
-                return StatusCode(StatusCodes.Status200OK, new { mensaje = true, token = _utilidades.generarTokenJWT(usuarioEncontrado) });
-            }    
+
+            // Generar token JWT (await porque es async)
+            var token = await _utilidades.generarTokenJWT(usuarioEncontrado);
+
+            return Ok(new { mensaje = true, token = token });
         }
     }
 }

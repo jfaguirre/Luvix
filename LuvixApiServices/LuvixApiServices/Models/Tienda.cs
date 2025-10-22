@@ -1,16 +1,20 @@
-﻿namespace LuvixApiServices.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace LuvixApiServices.Models
 {
     public class Tienda
     {
         public int Id { get; set; }
         public int IdUsuario { get; set; }
         public int IdCategoria { get; set; }
+        [StringLength(50)]
         public string Nombre { get; set; } = null!;
-        public string? Descripcion { get; set; }
-        public string? Logo { get; set; }
+        [StringLength(200)]
+        public string? Descripcion { get; set; }        
+        public string? Logo { get; set; }        
         public string? Portada { get; set; }
         public DateTime FechaCreacion { get; set; }
-        public string Estado { get; set; } = "activo";
+        public string Estado { get; set; } = null!;
 
         // Navegación
         public Usuario Usuario { get; set; } = null!;

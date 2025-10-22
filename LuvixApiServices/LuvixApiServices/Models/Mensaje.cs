@@ -1,4 +1,6 @@
-﻿namespace LuvixApiServices.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace LuvixApiServices.Models
 {
     public class Mensaje
     {
@@ -7,6 +9,7 @@
         public int? IdTiendaRemitente { get; set; }
         public int? IdUsuarioDestinatario { get; set; }
         public int? IdTiendaDestinatario { get; set; }
+        [StringLength(500)]
         public string MensajeTexto { get; set; } = null!;
         public DateTime FechaEnvio { get; set; }
         public bool Leido { get; set; }
