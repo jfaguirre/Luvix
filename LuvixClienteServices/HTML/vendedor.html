@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel del Vendedor</title>
+  <link rel="stylesheet" href="css_proyecto/vendedor_estilo.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+<body>
+  <!-- Barra superior -->
+  <header class="navbar">
+     <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <div class="logo">
+                    <div class="logo-square">
+                        <div class="logo-inner">
+
+                            <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400.91 398.23">
+                                <defs>
+                                    <style>
+                                    .cls-1 {
+                                        fill: #fff;
+                                    }
+
+                                    .cls-2 {
+                                        fill: #371b44;
+                                        opacity: .3;
+                                    }
+
+                                    .cls-3 {
+                                        fill: url(#Degradado_sin_nombre_52);
+                                    }
+
+                                    .cls-4 {
+                                        fill: none;
+                                        stroke: #8e8e8e;
+                                        stroke-miterlimit: 10;
+                                    }
+
+                                    .cls-5 {
+                                        fill: #353535;
+                                        opacity: .22;
+                                    }
+
+                                    .cls-6 {
+                                        opacity: .35;
+                                    }
+
+                                    .cls-7 {
+                                        opacity: .26;
+                                    }
+
+                                    .cls-8 {
+                                        fill: #878787;
+                                    }
+                                    </style>
+                                    <linearGradient id="Degradado_sin_nombre_52" data-name="Degradado sin nombre 52" x1="119.94" y1="244.67" x2="421.45" y2="119.01" gradientUnits="userSpaceOnUse">
+                                    <stop offset=".07" stop-color="#fff"/>
+                                    <stop offset=".64" stop-color="#e8e8e8"/>
+                                    <stop offset=".69" stop-color="#e6e6e6"/>
+                                    </linearGradient>
+                                </defs>
+                                <polygon class="cls-2" points="371.72 36.56 0 128.6 207.79 184.63 233.99 398.23 371.72 36.56"/>
+                                <polygon class="cls-3" points="379.82 16.12 242.61 376.44 216.51 163.65 9.5 107.81 145.81 74.06 157.32 71.21 287.09 39.08 291.7 37.94 299.68 35.97 303.22 35.09 379.82 16.12"/>
+                                <path class="cls-5" d="m160.96,111.81c.73,2.92-1.06,5.88-3.97,6.6-2.93.73-5.89-1.05-6.61-3.97l-2.74-11.01c-2.52-10.16-3.05-20.03-1.83-29.37l11.51-2.85c-1.85,9.25-1.67,19.22.91,29.59l2.73,11.01Z"/>
+                                <path class="cls-1" d="m172.05,106.07c1.42,7.01-3.12,13.84-10.12,15.26s-13.85-3.11-15.27-10.12,3.12-13.84,10.13-15.26,13.84,3.12,15.26,10.12Z"/>
+                                <path class="cls-4" d="m169.56,106.58c1.14,5.64-2.51,11.13-8.14,12.27s-11.13-2.5-12.27-8.14,2.51-11.13,8.14-12.27,11.13,2.51,12.27,8.14Z"/>
+                                <path class="cls-5" d="m313.78,79.4c-3,1.09-6.31-.48-7.39-3.51l-4.07-11.4c-3.58-10.04-8.79-18.52-15.23-25.41l4.61-1.14,7.98-1.97c5.58,7.04,10.17,15.25,13.5,24.59l4.07,11.41c1.08,3.01-.48,6.36-3.47,7.43Z"/>
+                                <path class="cls-1" d="m330.38,74.01c1.42,7.01-3.12,13.84-10.12,15.26-7.01,1.42-13.84-3.11-15.26-10.12-1.42-7,3.11-13.84,10.12-15.26,7-1.42,13.84,3.12,15.26,10.12Z"/>
+                                <path class="cls-4" d="m327.6,74.58c1.11,5.48-2.43,10.81-7.91,11.92-5.48,1.11-10.81-2.43-11.92-7.91-1.11-5.47,2.43-10.81,7.91-11.92,5.47-1.11,10.81,2.43,11.92,7.91Z"/>
+                                <path class="cls-8" d="m318.72,80.32c-2.96.6-5.84-1.31-6.43-4.26l-2.25-11.12c-8.26-40.77-46.78-60.45-87.55-52.2-40.77,8.26-68.6,41.37-60.35,82.14l2.25,11.12c.6,2.95-1.31,5.83-4.26,6.42s-5.83-1.31-6.43-4.26l-2.25-11.12c-9.45-46.67,22.21-85.54,68.87-94.99,46.66-9.45,90.95,14.05,100.4,60.72l2.25,11.12c.6,2.95-1.32,5.83-4.26,6.42Z"/>
+                                <g class="cls-6">
+                                    <image width="95" height="255" transform="translate(180.91 131.12)" xlink:href="data:image/png;base64,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"/>
+                                </g>
+                                <g class="cls-6">
+                                    <image width="250" height="123" transform="translate(.91 75.12)" xlink:href="data:image/png;base64,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"/>
+                                </g>
+                                <g class="cls-7">
+                                    <image width="122" height="199" transform="translate(278.91 16.12)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHoAAADHCAYAAADWDUdPAAAACXBIWXMAAAsSAAALEgHS3X78AAADzklEQVR4nO3cW0orURCF4crBYSTzcP5PzkPnETnYZSrtTvpWgbr8Hwg+iDQuqlw7O0QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA1zjxd/VzvV7PInKZfuHn6XT6ivJs/wI8QyX/Qz5PX6G8dU/GWciQhYn2M61tDfkr0toWgnZ1Mb8sVMhC0D6maX63RSzaMxK0j4sJOdzaFoJ2YwtYuJCFoI+blbDPiGtbCNqF/b/8EXFtC0Efk6GEKYI+JnwJUwR9TPgSpgh6pywlTBH0fmnWthD0PqaE/b62Hf2ZCXqfy6xph17bQtC72UkOe3a2CHqjbCVMEfR2qUqYIugNMpYwRdDbpCthiqC3Cf12oWcIeqX5e8IyrW0h6E3Srm0h6HVmJSzN2dki6HVST7MQ9GppS5gi6AXZS5gi6GXp17YQ9HOmhL1PP5hybQtBL7p7XTvr2haCXpTypmqEoB+YlbCPjGdni6AfK1HCFEEPVCphiqDHypQwRdBjZUqYIugZU8L0AiP92haCHiq3toWg7w1KWIm1LQT9h53m9Gdni6DvlSthiqAnVUuYIuibkiVMEfRN2bUtBP2j2gXGCEH/KHWBMdI+6IoXGCPtg65ewhRBFy9hqnXQ1c/OVveJbrG2pXPQlS8wRjpPdNkLjJHOQbcoYapl0J1KmOo60W1KmGoXdLcSpjpOdKsSpjoG3aqEqVZBdyxhqttEtythqlvQLde2dAq689qWZhPddm1Ll6C7np2tLhPd8uxsdQm6bQlT5YPuXsJUh4luXcJU6aApYTfVJ7p9CVPVg25fwlTZoClh9ypPNCXMqBw0a9soGTRr+6+qE83anikXNGfnsYoTzdl5oGLQlLCBUkFTwh6rNtGUsAfKBE0Je67SRFPCnqgUNCXsiRJBU8KWVZloStiCKkGzthekD7rD53h6qDDR5T/H00PqoLt8jqeH7BNNCVspe9CUsJXSBk0J2ybzRFPCNsgctJ1oStiClEHP1jYlbIWsE83a3ihd0ObsrBcYlLAVMk4007xDxqApYTukCpoStl+2iWZt75QmaC4wjsk00VxgHJApaC4wDkgRNBcYx2WZaErYQVmC5ux8UPigOTv7yDDRrG0HoYPmAsNP9Ilmmp1ED5oS5iRs0JQwX5EnmrXtKHLQdpopYQeFDHq2tplmB1En+u6mimk+LmrQZ/M9ITsIFzRr+zUiTrRt2pQwJ6GCNi952rDhINpEM80vEi1oW8KYZkdvwZ7n96VOptlXtKCZYgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAREfkGVLOnNsOjTeEAAAAASUVORK5CYII="/>
+                                </g>
+                            </svg>
+
+                        </div>
+                    </div>
+                    <span class="brand">Luvix</span>
+                </div>
+
+  <div class="nav-icons">
+      <button id="btnTienda"><i class="fa-solid fa-store"></i> Abrir Tienda</button>
+    <button id="btnServicio"><i class="fa-solid fa-briefcase"></i> Abrir Servicio</button>
+
+      <div class="profile-pic" id="profilePic"><i class="fa-solid fa-user"></i></div>
+    </div>
+
+<!-- Botón menú responsive dentro de navbar -->
+<div class="nav-menu-btn" id="navMenuToggle">
+  <i class="fas fa-bars"></i><a class="texto" href="profile-luvix.html" class="perfil-link">Mi perfil</a>
+</div>
+
+<!-- Sidebar lateral responsive dentro de navbar -->
+
+<div class="nav-responsive-sidebar" id="navResponsiveSidebar">
+
+  <ul>
+    <li><a href="vendedor.html">Inicio</a></li>
+    <li><a href="Tiendas.html">Tiendas</a></li>
+    <li><a href="servicios.html">Servicios</a></li>
+    <li><button class="btnTiendaResponsive"><i class="fa-solid fa-store"></i> Abrir Tienda</button></li>
+    <li><button class="btnServicioResponsive"><i class="fa-solid fa-briefcase"></i> Abrir Servicio</button></li>
+  </ul>
+</div>
+</header>
+
+
+  <main class="container">
+    <!-- Sidebar izquierdo -->
+    <aside class="sidebar-left">
+      <div class="profile">
+        <div class="profile-pic big"></div>
+        <h3>Juan Pérez</h3>
+        <p>Vendedor verificado</p>
+      </div>
+      <ul>
+        <li><a href="profile-luvix.html">Mi perfil</a></li>
+        <li><a href="#">Mis productos</a></li>
+        <li><a href="#">Mis Tiendas</a></li>
+        <li><a href="#">Carrito</a></li>
+      </ul>
+    </aside>
+
+<!-- CONTENIDO -->
+  <div class="feed-container">
+    <!-- PUBLICACIONES -->
+    <div class="post">
+      <div class="post-header">
+        <div class="post-avatar"></div>
+        <div>
+          <span class="post-store">Tecnología Plus</span>
+          <span class="post-time">· Hace 2 horas</span>
+        </div>
+      </div>
+      <div class="post-content">
+        ¡Llegó lo nuevo! Presentamos nuestros auriculares inalámbricos con cancelación de ruido.
+      </div>
+      <div class="post-image"></div>
+    </div>
+
+    <div class="post">
+      <div class="post-header">
+        <div class="post-avatar"></div>
+        <div>
+          <span class="post-store">Moda Urbana</span>
+          <span class="post-time">· Hace 1 día</span>
+        </div>
+      </div>
+      <div class="post-content">
+        Nueva colección primavera-verano ya disponible. ¡Envíos gratis esta semana!
+      </div>
+    </div>
+  </div>
+
+
+    <!-- Sidebar derecho -->
+    <aside class="sidebar-right">
+      <h3>Accesos rápidos</h3>
+      <ul>
+
+        <li><a href="vendedor.html">Inicio</a></li>
+        <li><a href="Tiendas.html">Tiendas</a></li>
+         <li><a href="servicios.html">Servicios</a></li>
+      </ul>
+    </aside>
+  </main>
+
+<!-- Modal para crear tienda -->
+<div id="modalTienda" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeTienda">&times;</span>
+    <h2><i class="fa-solid fa-store"></i> Crear tu Tienda</h2>
+    <p>Llena los detalles de tu tienda para comenzar a vender.</p>
+    <form id="formTienda">
+      <div class="input-group">
+        <i class="fa-solid fa-tag"></i>
+        <input type="text" placeholder="Nombre de la tienda" required>
+      </div>
+      <div class="input-group">
+        <i class="fa-solid fa-align-left"></i>
+        <textarea placeholder="Descripción de la tienda" required></textarea>
+      </div>
+      <div class="input-group">
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" id="passwordTienda" placeholder="Contraseña segura" required>
+      </div>
+      <small id="errorTienda" class="error-msg"></small>
+      <button type="submit"><i class="fa-solid fa-check"></i> Crear Tienda</button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal para servicio profesional -->
+<div id="modalServicio" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeServicio">&times;</span>
+    <h2><i class="fa-solid fa-briefcase"></i> Servicio Profesional</h2>
+    <p>Registra tu servicio para que los clientes puedan contratarte.</p>
+    <form id="formServicio">
+      <div class="input-group">
+        <i class="fa-solid fa-pen-to-square"></i>
+        <input type="text" placeholder="Nombre del servicio" required>
+      </div>
+      <div class="input-group">
+        <i class="fa-solid fa-align-left"></i>
+        <textarea placeholder="Descripción del servicio" required></textarea>
+      </div>
+      <div class="input-group">
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" id="passwordServicio" placeholder="Contraseña segura" required>
+      </div>
+      <small id="errorServicio" class="error-msg"></small>
+      <button type="submit"><i class="fa-solid fa-check"></i> Registrar Servicio</button>
+    </form>
+  </div>
+</div>
+
+<!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <div class="footer-logo-square">
+                             <div class="footer-logo-inner">
+                                <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400.91 398.23">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #371b44;
+        opacity: .3;
+      }
+
+      .cls-3 {
+        fill: url(#Degradado_sin_nombre_52);
+      }
+
+      .cls-4 {
+        fill: none;
+        stroke: #8e8e8e;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-5 {
+        fill: #353535;
+        opacity: .22;
+      }
+
+      .cls-6 {
+        opacity: .35;
+      }
+
+      .cls-7 {
+        opacity: .26;
+      }
+
+      .cls-8 {
+        fill: #878787;
+      }
+    </style>
+    <linearGradient id="Degradado_sin_nombre_52" data-name="Degradado sin nombre 52" x1="119.94" y1="244.67" x2="421.45" y2="119.01" gradientUnits="userSpaceOnUse">
+      <stop offset=".07" stop-color="#fff"/>
+      <stop offset=".64" stop-color="#e8e8e8"/>
+      <stop offset=".69" stop-color="#e6e6e6"/>
+    </linearGradient>
+  </defs>
+  <polygon class="cls-2" points="371.72 36.56 0 128.6 207.79 184.63 233.99 398.23 371.72 36.56"/>
+  <polygon class="cls-3" points="379.82 16.12 242.61 376.44 216.51 163.65 9.5 107.81 145.81 74.06 157.32 71.21 287.09 39.08 291.7 37.94 299.68 35.97 303.22 35.09 379.82 16.12"/>
+  <path class="cls-5" d="m160.96,111.81c.73,2.92-1.06,5.88-3.97,6.6-2.93.73-5.89-1.05-6.61-3.97l-2.74-11.01c-2.52-10.16-3.05-20.03-1.83-29.37l11.51-2.85c-1.85,9.25-1.67,19.22.91,29.59l2.73,11.01Z"/>
+  <path class="cls-1" d="m172.05,106.07c1.42,7.01-3.12,13.84-10.12,15.26s-13.85-3.11-15.27-10.12,3.12-13.84,10.13-15.26,13.84,3.12,15.26,10.12Z"/>
+  <path class="cls-4" d="m169.56,106.58c1.14,5.64-2.51,11.13-8.14,12.27s-11.13-2.5-12.27-8.14,2.51-11.13,8.14-12.27,11.13,2.51,12.27,8.14Z"/>
+  <path class="cls-5" d="m313.78,79.4c-3,1.09-6.31-.48-7.39-3.51l-4.07-11.4c-3.58-10.04-8.79-18.52-15.23-25.41l4.61-1.14,7.98-1.97c5.58,7.04,10.17,15.25,13.5,24.59l4.07,11.41c1.08,3.01-.48,6.36-3.47,7.43Z"/>
+  <path class="cls-1" d="m330.38,74.01c1.42,7.01-3.12,13.84-10.12,15.26-7.01,1.42-13.84-3.11-15.26-10.12-1.42-7,3.11-13.84,10.12-15.26,7-1.42,13.84,3.12,15.26,10.12Z"/>
+  <path class="cls-4" d="m327.6,74.58c1.11,5.48-2.43,10.81-7.91,11.92-5.48,1.11-10.81-2.43-11.92-7.91-1.11-5.47,2.43-10.81,7.91-11.92,5.47-1.11,10.81,2.43,11.92,7.91Z"/>
+  <path class="cls-8" d="m318.72,80.32c-2.96.6-5.84-1.31-6.43-4.26l-2.25-11.12c-8.26-40.77-46.78-60.45-87.55-52.2-40.77,8.26-68.6,41.37-60.35,82.14l2.25,11.12c.6,2.95-1.31,5.83-4.26,6.42s-5.83-1.31-6.43-4.26l-2.25-11.12c-9.45-46.67,22.21-85.54,68.87-94.99,46.66-9.45,90.95,14.05,100.4,60.72l2.25,11.12c.6,2.95-1.32,5.83-4.26,6.42Z"/>
+  <g class="cls-6">
+    <image width="95" height="255" transform="translate(180.91 131.12)" xlink:href="data:image/png;base64,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"/>
+  </g>
+  <g class="cls-6">
+    <image width="250" height="123" transform="translate(.91 75.12)" xlink:href="data:image/png;base64,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"/>
+  </g>
+  <g class="cls-7">
+    <image width="122" height="199" transform="translate(278.91 16.12)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHoAAADHCAYAAADWDUdPAAAACXBIWXMAAAsSAAALEgHS3X78AAADzklEQVR4nO3cW0orURCF4crBYSTzcP5PzkPnETnYZSrtTvpWgbr8Hwg+iDQuqlw7O0QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA1zjxd/VzvV7PInKZfuHn6XT6ivJs/wI8QyX/Qz5PX6G8dU/GWciQhYn2M61tDfkr0toWgnZ1Mb8sVMhC0D6maX63RSzaMxK0j4sJOdzaFoJ2YwtYuJCFoI+blbDPiGtbCNqF/b/8EXFtC0Efk6GEKYI+JnwJUwR9TPgSpgh6pywlTBH0fmnWthD0PqaE/b62Hf2ZCXqfy6xph17bQtC72UkOe3a2CHqjbCVMEfR2qUqYIugNMpYwRdDbpCthiqC3Cf12oWcIeqX5e8IyrW0h6E3Srm0h6HVmJSzN2dki6HVST7MQ9GppS5gi6AXZS5gi6GXp17YQ9HOmhL1PP5hybQtBL7p7XTvr2haCXpTypmqEoB+YlbCPjGdni6AfK1HCFEEPVCphiqDHypQwRdBjZUqYIugZU8L0AiP92haCHiq3toWg7w1KWIm1LQT9h53m9Gdni6DvlSthiqAnVUuYIuibkiVMEfRN2bUtBP2j2gXGCEH/KHWBMdI+6IoXGCPtg65ewhRBFy9hqnXQ1c/OVveJbrG2pXPQlS8wRjpPdNkLjJHOQbcoYapl0J1KmOo60W1KmGoXdLcSpjpOdKsSpjoG3aqEqVZBdyxhqttEtythqlvQLde2dAq689qWZhPddm1Ll6C7np2tLhPd8uxsdQm6bQlT5YPuXsJUh4luXcJU6aApYTfVJ7p9CVPVg25fwlTZoClh9ypPNCXMqBw0a9soGTRr+6+qE83anikXNGfnsYoTzdl5oGLQlLCBUkFTwh6rNtGUsAfKBE0Je67SRFPCnqgUNCXsiRJBU8KWVZloStiCKkGzthekD7rD53h6qDDR5T/H00PqoLt8jqeH7BNNCVspe9CUsJXSBk0J2ybzRFPCNsgctJ1oStiClEHP1jYlbIWsE83a3ihd0ObsrBcYlLAVMk4007xDxqApYTukCpoStl+2iWZt75QmaC4wjsk00VxgHJApaC4wDkgRNBcYx2WZaErYQVmC5ux8UPigOTv7yDDRrG0HoYPmAsNP9Ilmmp1ED5oS5iRs0JQwX5EnmrXtKHLQdpopYQeFDHq2tplmB1En+u6mimk+LmrQZ/M9ITsIFzRr+zUiTrRt2pQwJ6GCNi952rDhINpEM80vEi1oW8KYZkdvwZ7n96VOptlXtKCZYgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAREfkGVLOnNsOjTeEAAAAASUVORK5CYII="/>
+  </g>
+                                </svg>
+                             </div>
+                        </div>
+                        <span class="brand">Luvix</span>
+                    </div>
+                    <p class="footer-text">Plataforma de comercio electrónico para emprendedores y empresas.</p>
+                </div>
+
+                <div>
+                    <h3 class="footer-heading">Servicios</h3>
+                    <ul class="footer-list">
+                        <li><a href="#">Clínicas y laboratorios</a></li>
+                        <li><a href="#">Veterinarias</a></li>
+                        <li><a href="#">Abogados y notariados</a></li>
+                        <li><a href="#">Fotografía y video</a></li>
+                        <li><a href="#">Fontanería y albañilería</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer-heading">Productos</h3>
+                    <ul class="footer-list">
+                        <li><a href="#">Panaderías y pastelerías</a></li>
+                        <li><a href="#">Bisuterías</a></li>
+                        <li><a href="#">Comida rápida</a></li>
+                        <li><a href="#">Ferreterías</a></li>
+                        <li><a href="#">Ropa y calzado</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer-heading">Contacto</h3>
+                    <address class="footer-text" style="font-style: normal;">
+                        La Paz, Zacatecoluca<br>
+                        Zona urbana central<br>
+                        <br>
+                        Email: info@luvix.com<br>
+                        Tel: +503 XXXX-XXXX
+                    </address>
+                </div>
+            </div>
+
+            <div class="footer-divider">
+                <p class="footer-copyright">&copy; 2024 Luvix - Lugares Virtuales. Todos los derechos reservados.</p>
+                <div class="footer-values">
+                    <span class="footer-value">Honestidad</span>
+                    <span class="footer-value">Calidad</span>
+                    <span class="footer-value">Transparencia</span>
+                    <span class="footer-value">Ética</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/tienda.js"></script>
+   <script src="js/proyecto.js"></script>
+ <script>
+  // Selecciona el div del perfil
+  const profilePic = document.getElementById('profilePic');
+
+  // Agrega el evento click para redirigir
+  profilePic.addEventListener('click', () => {
+    window.location.href = 'profile-luvix.html';
+  });
+</script>
+
+</body>
+</html>

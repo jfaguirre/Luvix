@@ -152,6 +152,12 @@ namespace LuvixApiServices.Controllers
 
             // Actualiza el campo FotoPerfil en la base de datos
             var usuario = await _AppDbContext.Usuarios.FindAsync(userId);
+
+            if (usuario == null)
+            {
+                return BadRequest(new { mensaje = "Usuario no encontrado." });
+            }
+
             usuario.FotoPerfil = $"/fotos-perfil/{nombreArchivo}";
             await _AppDbContext.SaveChangesAsync();     
 
@@ -172,6 +178,17 @@ namespace LuvixApiServices.Controllers
             {
                 return 0;
             }
+        }
+
+        // Cargar foto de perfil
+        [HttpGet("perfil/{id:int}")]
+        public async Task<IActionResult> ObtenerPerfil(int id)
+        {
+            var usuario = await _AppDbContext.Usuarios.FindAsync(id);
+            if (usuario == null)
+                return NotFound();
+
+            return Ok(new { fotoUrl = usuario.FotoPerfil });
         }
     }
 }

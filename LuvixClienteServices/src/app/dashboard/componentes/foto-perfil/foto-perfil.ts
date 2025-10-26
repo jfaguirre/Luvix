@@ -15,7 +15,12 @@ export class FotoPerfil {
   private http = inject(HttpClient);
   authService = inject(AuthService);
 
-  fotoUrl = this.getFotoUrl();
+  fotoUrl: string = '/fotos-perfil/default-perfil.jpg';
+
+  // fotoUrl = this.cargarFotoPerfil();
+  ngOnInit() {
+    this.cargarFotoPerfil();
+  }
 
   onFileSelected(event: any): void {
   const file: File = event.target.files[0];
@@ -31,6 +36,7 @@ export class FotoPerfil {
       next: (response: any) => {
         this.fotoUrl = response.fotoUrl;
         console.log('Foto subida:', response.fotoUrl);
+
       },
       error: (err) => {
         console.error('Error al subir foto', err);
@@ -39,13 +45,27 @@ export class FotoPerfil {
   }
 }
 
-  getFotoUrl() {
-    const token = this.authService.getToken();
-    if (token) {
-      const payload = JSON.parse(atob(token.split('.')[1]));
-      return payload['FotoPerfil'] || '/assets/fotos-perfil/default-perfil.jpg'; // imagen por defecto
-    }
-    return '/assets/fotos-perfil/default-perfil.jpg';
+  // Método para cargar la foto de perfil desde el backend
+    cargarFotoPerfil(): void {
+      const token = this.authService.getToken();
+      if (!token) return;
+
+      try {
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        const userId = payload['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'];
+
+        // Llama al backend para obtener la foto del usuario
+        this.http.get(`http://localhost:5206/api/Usuario/perfil/${userId}`).subscribe({
+          next: (response: any) => {
+            this.fotoUrl = `http://localhost:5206${response.fotoUrl}` || '/fotos-perfil/default-perfil.jpg';
+          },
+          error: (err) => {
+            console.error('Error al cargar la foto de perfil', err);
+            this.fotoUrl = '/fotos-perfil/default-perfil.jpg';
+          }
+        });
+      } catch (error) {
+        console.error('Error al decodificar el token', error);
+      }
   }
 }
-

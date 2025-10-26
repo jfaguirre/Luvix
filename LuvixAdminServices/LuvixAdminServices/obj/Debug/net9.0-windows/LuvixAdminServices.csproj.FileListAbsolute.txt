@@ -1,8 +1,0 @@
-C:\Users\USUARIO\Documents\GitHub\Luvix\LuvixAdminServices\LuvixAdminServices\obj\Debug\net9.0-windows\LuvixAdminServices.csproj.AssemblyReference.cache
-C:\Users\USUARIO\Documents\GitHub\Luvix\LuvixAdminServices\LuvixAdminServices\obj\Debug\net9.0-windows\LuvixAdminServices.frmMain.resources
-C:\Users\USUARIO\Documents\GitHub\Luvix\LuvixAdminServices\LuvixAdminServices\obj\Debug\net9.0-windows\LuvixAdminServices.csproj.GenerateResource.cache
-C:\Users\USUARIO\Documents\GitHub\Luvix\LuvixAdminServices\LuvixAdminServices\obj\Debug\net9.0-windows\LuvixAdminServices.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\USUARIO\Documents\GitHub\Luvix\LuvixAdminServices\LuvixAdminServices\obj\Debug\net9.0-windows\LuvixAdminServices.AssemblyInfoInputs.cache
-C:\Users\USUARIO\Documents\GitHub\Luvix\LuvixAdminServices\LuvixAdminServices\obj\Debug\net9.0-windows\LuvixAdminServices.AssemblyInfo.cs
-C:\Users\USUARIO\Documents\GitHub\Luvix\LuvixAdminServices\LuvixAdminServices\obj\Debug\net9.0-windows\LuvixAdminServices.csproj.CoreCompileInputs.cache
-C:\Users\USUARIO\Documents\GitHub\Luvix\LuvixAdminServices\LuvixAdminServices\obj\Debug\net9.0-windows\LuvixAdminServices.sourcelink.json
