@@ -13,13 +13,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './menu.css',
 })
 export class Menu {
-  // isLoggedIn$: Observable<boolean>;
 
-  // constructor(public authService: AuthService) {
-  //   this.isLoggedIn$ = this.authService.isLoggedIn;
-  // }
+  // constructor(public authService: AuthService) {}
 
-  // logout() {
-  //   this.authService.logout();
-  // }
 }

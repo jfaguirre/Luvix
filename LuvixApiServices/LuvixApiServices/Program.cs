@@ -80,6 +80,7 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 app.UseCors("AllowAngularApp");
+app.UseStaticFiles();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -91,8 +92,6 @@ if (app.Environment.IsDevelopment())
         options.DocumentPath = "/openapi/v1.json";
     });
 }
-
-app.UseStaticFiles(); 
 
 app.UseAuthentication();
 app.UseAuthorization();

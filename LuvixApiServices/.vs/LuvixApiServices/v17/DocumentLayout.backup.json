@@ -5,18 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|c:\\users\\usuario\\documents\\github\\luvix\\luvixapiservices\\luvixapiservices\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|solutionrelative:luvixapiservices\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|c:\\users\\usuario\\documents\\github\\luvix\\luvixapiservices\\luvixapiservices\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|solutionrelative:luvixapiservices\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|c:\\users\\usuario\\documents\\github\\luvix\\luvixapiservices\\luvixapiservices\\customproperties\\utilidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|solutionrelative:luvixapiservices\\customproperties\\utilidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|c:\\users\\usuario\\documents\\github\\luvix\\luvixapiservices\\luvixapiservices\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|solutionrelative:luvixapiservices\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,35 +14,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Utilidades.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\CustomProperties\\Utilidades.cs",
-              "RelativeDocumentMoniker": "LuvixApiServices\\CustomProperties\\Utilidades.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\CustomProperties\\Utilidades.cs",
-              "RelativeToolTip": "LuvixApiServices\\CustomProperties\\Utilidades.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACsAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T01:41:34.116Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Program.cs",
-              "RelativeDocumentMoniker": "LuvixApiServices\\Program.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Program.cs",
-              "RelativeToolTip": "LuvixApiServices\\Program.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T03:07:21.838Z"
             },
             {
               "$type": "Document",
@@ -64,22 +28,10 @@
               "RelativeDocumentMoniker": "LuvixApiServices\\Controllers\\UsuarioController.cs",
               "ToolTip": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Controllers\\UsuarioController.cs",
               "RelativeToolTip": "LuvixApiServices\\Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAewKsAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACoAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-14T03:42:07.318Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AccesoController.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Controllers\\AccesoController.cs",
-              "RelativeDocumentMoniker": "LuvixApiServices\\Controllers\\AccesoController.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Controllers\\AccesoController.cs",
-              "RelativeToolTip": "LuvixApiServices\\Controllers\\AccesoController.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAAEwAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T03:39:33.697Z"
             }
           ]
         }

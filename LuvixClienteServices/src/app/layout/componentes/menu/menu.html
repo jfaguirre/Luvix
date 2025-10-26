@@ -19,7 +19,7 @@
                   >Inicio</a>
 
                   <!-- Si no esta autenticado se ve el menu -->
-                  <!-- @if(!(isLoggedIn$ | async)) { -->
+                  <!-- @if(!(authService.isLoggedIn | async)) { -->
                     <a
                       routerLink="/nosotros"
                       routerLinkActive="active"
