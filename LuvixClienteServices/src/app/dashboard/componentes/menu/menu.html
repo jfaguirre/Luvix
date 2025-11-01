@@ -4,14 +4,15 @@
                 <div class="nav-items">
 
                   <a
-                  routerLink="/dashboard/perfil"
-                  routerLinkActive="active"
-                  class="nav-link"
-                  ><i class="bi bi-person-fill iconos"></i>
-                  <span>Perfil</span>
+                    routerLink="/dashboard/perfil"
+                    routerLinkActive="active"
+                    class="nav-link"
+                    ><i class="bi bi-person-fill iconos"></i>
+                    <span>Perfil</span>
                   </a>
 
                   <a
+                    #ventasLink="routerLinkActive"
                     routerLink="/dashboard/tiendas"
                     routerLinkActive="active"
                     class="nav-link"><i class="bi bi-shop-window iconos"></i>
@@ -24,6 +25,15 @@
                     class="nav-link"><i class="bi bi-cursor-fill iconos"></i>
                     <span>Ventas</span>
                   </a>
+
+                   @if(ventasLink.isActive) {
+                      <a
+                        routerLink="/dashboard/crear"
+                        routerLinkActive="active"
+                        class="nav-link"><i class="bi bi-card-list iconos"></i>
+                        <span>Crear</span>
+                      </a>
+                    }
 
                 </div>
             </div>

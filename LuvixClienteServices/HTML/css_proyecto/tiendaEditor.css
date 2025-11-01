@@ -1,0 +1,431 @@
+:root {
+  --primary-purple: #6d28d9;
+  --primary-purple-dark: #5b21b6;
+  --primary-purple-darker: #4c1d95;
+  --primary-purple-light: #8b5cf6;
+  --primary-purple-lighter: #a78bfa;
+  --white: #ffffff;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--gray-50);
+  color: var(--gray-900);
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background-color: var(--primary-purple);
+  color: var(--white);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-inner {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-icons button {
+  background: var(--primary-purple-dark);
+  border: none;
+  color: var(--white);
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.3s;
+}
+
+.nav-icons button:hover {
+  background: var(--primary-purple-light);
+}
+
+.perfil-pic {
+  width: 35px;
+  height: 35px;
+  background: var(--primary-purple-light);
+  border-radius: 50%;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  font-size: 18px;
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.main-container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== BOTONES GENERALES ===== */
+.btn {
+  background: var(--primary-purple);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: 500;
+}
+.btn:hover {
+  background: var(--primary-purple-dark);
+}
+
+/* ===== SECCIÓN DE PRODUCTOS ===== */
+.product-section {
+  margin-top: 2rem;
+}
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.product-card {
+  background: var(--gray-100);
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.product-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  background: var(--gray-200);
+}
+.product-info {
+  padding: 1rem;
+}
+.product-info h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--gray-900);
+}
+.product-info p {
+  color: var(--gray-700);
+  font-size: 0.9rem;
+}
+.product-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem;
+  border-top: 1px solid var(--gray-200);
+  background: var(--gray-100);
+}
+.product-actions button {
+  flex: 1;
+  margin: 0 3px;
+  padding: 0.4rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--white);
+  transition: background 0.3s;
+}
+.btn-edit { background: var(--primary-purple-light); }
+.btn-edit:hover { background: var(--primary-purple); }
+.btn-delete { background: #dc2626; }
+.btn-delete:hover { background: #b91c1c; }
+.btn-publish { background: #16a34a; }
+.btn-publish:hover { background: #15803d; }
+
+/* ===== MODALES ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(17, 24, 39, 0.8);
+}
+.modal-content {
+  background-color: var(--white);
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.close {
+  float: right;
+  color: var(--gray-600);
+  font-size: 24px;
+  cursor: pointer;
+}
+.close:hover {
+  color: var(--gray-900);
+}
+
+/* ===== FORMULARIOS ===== */
+form label {
+  display: block;
+  font-weight: 600;
+  margin-top: 10px;
+}
+form input, form select, form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 5px;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+form input:focus, form textarea:focus {
+  border-color: var(--primary-purple-light);
+  outline: none;
+}
+
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 25px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.modal input, .modal textarea {
+  width: 100%;
+  margin: 8px 0;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid var(--gray-300);
+}
+
+/* MODALES */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(17, 24, 39, 0.75);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  animation: pop 0.25s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+  color: var(--primary-purple-dark);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.modal-content label {
+  display: block;
+  margin-top: 1rem;
+  color: var(--gray-800);
+  font-weight: 600;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.4rem;
+  border-radius: 6px;
+  border: 1px solid var(--gray-300);
+  background-color: var(--gray-100);
+}
+
+.modal-content button[type="submit"] {
+  margin-top: 1.2rem;
+  padding: 0.7rem 1rem;
+  background-color: var(--primary-purple);
+  border: none;
+  color: var(--white);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modal-content button[type="submit"]:hover {
+  background-color: var(--primary-purple-dark);
+}
+
+.preview {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin-top: 0.6rem;
+  border-radius: 6px;
+}
+
+.cerrar-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--gray-600);
+}
+
+
+
+
+/* Ocultar menú responsive por defecto */
+.nav-responsive-sidebar {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--primary-purple);
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-responsive-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-responsive-sidebar li {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.nav-responsive-sidebar li a,
+.nav-responsive-sidebar li button {
+  display: block;
+  padding: 12px 20px;
+  color: #fff;
+  text-decoration: none;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+}
+
+.nav-responsive-sidebar li a:hover,
+.nav-responsive-sidebar li button:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* Mostrar botón menú solo en responsive */
+.nav-menu-btn {
+  display: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  align-items: center;
+  gap: 8px;
+}
+.texto{
+  color: #fff;
+  text-decoration: none;
+  background: none;
+}
+
+/* Media query responsive */
+@media (max-width: 900px) {
+  .nav-menu-btn {
+    display: flex;
+  }
+
+  .nav-icons,
+  .sidebar-left,
+  .sidebar-right {
+    display: none; 
+  }
+}

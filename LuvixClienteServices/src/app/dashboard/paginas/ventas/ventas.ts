@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Post } from '../../componentes/post/post'
 
 @Component({
   selector: 'app-ventas',
-  imports: [],
+  imports: [Post],
   templateUrl: './ventas.html',
   styleUrl: './ventas.css'
 })

@@ -28,7 +28,7 @@
 
 .nav-items {
     display: flex;
-    gap: 5rem;
+    gap: 3rem;
 }
 
 .nav-link {

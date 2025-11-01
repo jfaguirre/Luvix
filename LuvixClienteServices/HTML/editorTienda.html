@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LUVIX - Mi Tienda</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    :root {
+      --primary-purple: #6d28d9;
+      --primary-purple-dark: #5b21b6;
+      --primary-purple-darker: #4c1d95;
+      --primary-purple-light: #8b5cf6;
+      --primary-purple-lighter: #a78bfa;
+      --white: #ffffff;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: var(--gray-50);
+      color: var(--gray-900);
+    }
+
+    /* NAV */
+    .navbar {
+      background-color: var(--primary-purple);
+      color: var(--white);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .brand {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    .perfil-pic {
+      width: 35px;
+      height: 35px;
+      background: var(--primary-purple-light); 
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--white); 
+      font-size: 18px; 
+      cursor: pointer;
+    }
+
+    /* CONTENEDOR PRINCIPAL */
+    .container {
+      max-width: 1000px;
+      margin: 1rem auto;
+      padding: 0 1rem;
+    }
+
+    /* SECCIÓN INFO TIENDA */
+    .store-info {
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .store-cover {
+      width: 100%;
+      height: 180px;
+      background:  #7e22ce;
+      position: relative;
+    }
+
+    .store-profile {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 4px solid var(--white);
+      position: absolute;
+      bottom: -50px;
+      left: 20px;
+      background: var(--gray-200);
+      object-fit: cover;
+    }
+
+    .store-details {
+      padding: 60px 20px 20px 20px;
+      position: relative;
+    }
+
+    .store-name {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    .edit-store-btn {
+      background: var(--primary-purple-dark);
+      color: var(--white);
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .edit-store-btn:hover {
+      background: var(--primary-purple-light);
+      transform: translateY(-1px);
+    }
+
+    /* BOTÓN NUEVO PRODUCTO */
+    .new-product-btn {
+      background: var(--primary-purple-dark);
+      color: var(--white);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 1rem;
+      display: block;
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .new-product-btn:hover {
+      background: var(--primary-purple-light);
+      transform: translateY(-1px);
+    }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: var(--white);
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      position: relative;
+    }
+    .modal-content h2 {
+      margin-bottom: 1rem;
+      color: var(--primary-purple-darker);
+    }
+    .close {
+      position: absolute;
+      top: 10px; right: 15px;
+      cursor: pointer;
+      font-size: 22px;
+      color: var(--gray-700);
+    }
+    .input-group {
+      margin-bottom: 1rem;
+    }
+    .input-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .input-group input, .input-group textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid var(--gray-300);
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    /* PUBLICACIONES */
+    .product-post {
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+    .post-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 15px;
+    }
+    .post-header img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .post-store-name {
+      font-weight: 600;
+      color: var(--gray-800);
+    }
+    .product-img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+    }
+    .post-content {
+      padding: 10px 15px;
+    }
+    .post-content h3 {
+      margin: 5px 0;
+      color: var(--primary-purple-darker);
+    }
+    .post-content p {
+      margin: 4px 0;
+    }
+
+    /* BOTONES ACCIONES PRODUCTO */
+    .product-actions {
+      display: flex;
+      gap: 0.5rem;
+      padding: 10px 15px;
+      border-top: 1px solid var(--gray-200);
+    }
+    .product-actions button {
+      background: var(--primary-purple-dark);
+      border: none;
+      color: var(--white);
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .product-actions button:hover {
+      background: var(--primary-purple-light);
+      transform: translateY(-1px);
+    }
+    .product-actions button i {
+      font-size: 0.9rem;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-content">
+        <div class="logo">
+          <i class="fa-solid fa-store"></i>
+          <span class="brand">LUVIX</span>
+        </div>
+        <div class="perfil-pic"><i class="fa-solid fa-user"></i></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO -->
+  <div class="container">
+
+    <!-- INFO TIENDA -->
+    <div class="store-info">
+      <div class="store-cover" id="storeCover">
+        <img src="" id="storeCoverPreview" style="width:100%;height:100%;object-fit:cover;display:none;">
+        <img src="" id="storeProfilePreview" class="store-profile">
+      </div>
+      <div class="store-details">
+        <h2 class="store-name" id="storeName">Mi Tienda</h2>
+        <button class="edit-store-btn" id="editStoreBtn"><i class="fa-solid fa-pen"></i> Editar información</button>
+      </div>
+    </div>
+
+    <!-- BOTÓN NUEVO PRODUCTO -->
+    <button class="new-product-btn" id="newProductBtn">
+      <i class="fa-solid fa-plus"></i> Nuevo producto
+    </button>
+
+    <!-- LISTA DE PRODUCTOS -->
+    <div id="productList"></div>
+  </div>
+
+  <!-- MODAL NUEVO PRODUCTO -->
+  <div id="modalProduct" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeProduct">&times;</span>
+      <h2>Agregar producto</h2>
+      <form id="formProduct">
+        <div class="input-group">
+          <label>Nombre del producto</label>
+          <input type="text" id="productName" required>
+        </div>
+        <div class="input-group">
+          <label>Precio</label>
+          <input type="number" id="productPrice" required>
+        </div>
+        <div class="input-group">
+          <label>Stock</label>
+          <input type="number" id="productStock" required>
+        </div>
+        <div class="input-group">
+          <label>Descripción</label>
+          <textarea id="productDesc" rows="3" required></textarea>
+        </div>
+        <div class="input-group">
+          <label>Foto del producto</label>
+          <input type="file" id="productImage" accept="image/*">
+        </div>
+        <button type="submit" class="new-product-btn"><i class="fa-solid fa-save"></i> Guardar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL EDITAR PRODUCTO -->
+  <div id="modalEditProduct" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeEditProduct">&times;</span>
+      <h2>Editar producto</h2>
+      <form id="formEditProduct">
+        <div class="input-group">
+          <label>Nombre del producto</label>
+          <input type="text" id="editProductName" required>
+        </div>
+        <div class="input-group">
+          <label>Precio</label>
+          <input type="number" id="editProductPrice" required>
+        </div>
+        <div class="input-group">
+          <label>Stock</label>
+          <input type="number" id="editProductStock" required>
+        </div>
+        <div class="input-group">
+          <label>Descripción</label>
+          <textarea id="editProductDesc" rows="3" required></textarea>
+        </div>
+        <div class="input-group">
+          <label>Foto del producto</label>
+          <input type="file" id="editProductImage" accept="image/*">
+        </div>
+        <button type="submit" class="new-product-btn"><i class="fa-solid fa-save"></i> Guardar cambios</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL EDITAR TIENDA -->
+  <div id="modalStore" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeStore">&times;</span>
+      <h2>Editar información de la tienda</h2>
+      <form id="formStore">
+        <div class="input-group">
+          <label>Nombre de la tienda</label>
+          <input type="text" id="editStoreName">
+        </div>
+        <div class="input-group">
+          <label>Foto de perfil</label>
+          <input type="file" id="editStoreProfile" accept="image/*">
+        </div>
+        <div class="input-group">
+          <label>Foto de portada</label>
+          <input type="file" id="editStoreCover" accept="image/*">
+        </div>
+        <button type="submit" class="new-product-btn"><i class="fa-solid fa-save"></i> Guardar cambios</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const newProductBtn = document.getElementById('newProductBtn');
+    const modalProduct = document.getElementById('modalProduct');
+    const closeProduct = document.getElementById('closeProduct');
+    const formProduct = document.getElementById('formProduct');
+    const productList = document.getElementById('productList');
+
+    const editStoreBtn = document.getElementById('editStoreBtn');
+    const modalStore = document.getElementById('modalStore');
+    const closeStore = document.getElementById('closeStore');
+    const formStore = document.getElementById('formStore');
+    const storeName = document.getElementById('storeName');
+    const storeProfilePreview = document.getElementById('storeProfilePreview');
+    const storeCoverPreview = document.getElementById('storeCoverPreview');
+
+    const modalEditProduct = document.getElementById('modalEditProduct');
+    const closeEditProduct = document.getElementById('closeEditProduct');
+    const formEditProduct = document.getElementById('formEditProduct');
+
+    let products = [];
+    let storeData = { name: "Mi Tienda", profile: "", cover: "" };
+    let currentEditProductIndex = null;
+
+    // Abrir / cerrar modales
+    newProductBtn.onclick = () => modalProduct.style.display = "flex";
+    closeProduct.onclick = () => modalProduct.style.display = "none";
+    editStoreBtn.onclick = () => modalStore.style.display = "flex";
+    closeStore.onclick = () => modalStore.style.display = "none";
+    closeEditProduct.onclick = () => modalEditProduct.style.display = "none";
+    window.onclick = (e) => {
+      if (e.target === modalProduct) modalProduct.style.display = "none";
+      if (e.target === modalStore) modalStore.style.display = "none";
+      if (e.target === modalEditProduct) modalEditProduct.style.display = "none";
+    };
+
+    // Agregar producto
+    formProduct.onsubmit = (e) => {
+      e.preventDefault();
+      const name = document.getElementById('productName').value;
+      const price = document.getElementById('productPrice').value;
+      const stock = document.getElementById('productStock').value;
+      const desc = document.getElementById('productDesc').value;
+      const imageFile = document.getElementById('productImage').files[0];
+
+      const add = (imageURL="") => {
+        products.push({ name, price, stock, desc, imageURL });
+        renderProducts();
+      };
+
+      if (imageFile) {
+        const reader = new FileReader();
+        reader.onload = () => add(reader.result);
+        reader.readAsDataURL(imageFile);
+      } else add();
+
+      modalProduct.style.display = "none";
+      formProduct.reset();
+    };
+
+    // Editar producto
+    window.editProduct = (index) => {
+      const p = products[index];
+      currentEditProductIndex = index;
+      document.getElementById('editProductName').value = p.name;
+      document.getElementById('editProductPrice').value = p.price;
+      document.getElementById('editProductStock').value = p.stock;
+      document.getElementById('editProductDesc').value = p.desc;
+      modalEditProduct.style.display = "flex";
+    };
+
+    formEditProduct.onsubmit = (e) => {
+      e.preventDefault();
+      const name = document.getElementById('editProductName').value;
+      const price = document.getElementById('editProductPrice').value;
+      const stock = document.getElementById('editProductStock').value;
+      const desc = document.getElementById('editProductDesc').value;
+      const imageFile = document.getElementById('editProductImage').files[0];
+
+      const update = (imageURL) => {
+        products[currentEditProductIndex] = { name, price, stock, desc, imageURL };
+        renderProducts();
+      };
+
+      if (imageFile) {
+        const reader = new FileReader();
+        reader.onload = () => update(reader.result);
+        reader.readAsDataURL(imageFile);
+      } else {
+        update(products[currentEditProductIndex].imageURL);
+      }
+
+      modalEditProduct.style.display = "none";
+    };
+
+    // Eliminar producto
+    window.deleteProduct = (index) => {
+      if (confirm("¿Eliminar este producto?")) {
+        products.splice(index, 1);
+        renderProducts();
+      }
+    };
+
+    // Publicar producto
+    window.publishProduct = (index) => {
+      alert(`El producto "${products[index].name}" ha sido publicado.`);
+    };
+
+    // Editar tienda
+    formStore.onsubmit = (e) => {
+      e.preventDefault();
+      const name = document.getElementById('editStoreName').value || storeData.name;
+      storeData.name = name;
+      storeName.textContent = name;
+
+      const profileFile = document.getElementById('editStoreProfile').files[0];
+      const coverFile = document.getElementById('editStoreCover').files[0];
+
+      if (profileFile) {
+        const reader = new FileReader();
+        reader.onload = () => { storeData.profile = reader.result; storeProfilePreview.src = reader.result; };
+        reader.readAsDataURL(profileFile);
+      }
+      if (coverFile) {
+        const reader = new FileReader();
+        reader.onload = () => { storeData.cover = reader.result; storeCoverPreview.src = reader.result; storeCoverPreview.style.display="block"; };
+        reader.readAsDataURL(coverFile);
+      }
+
+      modalStore.style.display = "none";
+      formStore.reset();
+      renderProducts();
+    };
+
+    function renderProducts() {
+      productList.innerHTML = "";
+      products.forEach((p, i) => {
+        const post = document.createElement('div');
+        post.className = "product-post";
+        post.innerHTML = `
+          <div class="post-header">
+            <img src="${storeData.profile || 'https://via.placeholder.com/40'}" alt="tienda">
+            <span class="post-store-name">${storeData.name}</span>
+          </div>
+          <img src="${p.imageURL || 'https://via.placeholder.com/500x300'}" class="product-img" alt="producto">
+          <div class="post-content">
+            <h3>${p.name}</h3>
+            <p><strong>Precio:</strong> $${p.price}</p>
+            <p><strong>Stock:</strong> ${p.stock}</p>
+            <p>${p.desc}</p>
+          </div>
+          <div class="product-actions">
+            <button class="edit-product-btn" onclick="editProduct(${i})"><i class="fa-solid fa-pen"></i> Editar</button>
+            <button class="delete-product-btn" onclick="deleteProduct(${i})"><i class="fa-solid fa-trash"></i> Eliminar</button>
+            <button class="publish-product-btn" onclick="publishProduct(${i})"><i class="fa-solid fa-upload"></i> Publicar</button>
+          </div>
+        `;
+        productList.appendChild(post);
+      });
+    }
+  </script>
+</body>
+</html>

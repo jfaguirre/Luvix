@@ -22,4 +22,8 @@ export const DASHBOARD_ROUTES: Routes = [
     { path: 'ventas',
       loadComponent: () => import('../dashboard/paginas/ventas/ventas').then(m => m.Ventas)
     },
+
+    { path: 'crear',
+      loadComponent: () => import('../dashboard/paginas/crear/crear').then(m => m.Crear)
+    },
 ];
