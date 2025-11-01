@@ -1,0 +1,59 @@
+/* INICIO */
+    .feed-container {
+      max-width: 760px;
+      margin: 15px auto 40px;
+    }
+
+    .post {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .post-header {
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .post-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #cbd5e0;
+      margin-right: 12px;
+    }
+
+    .post-store {
+      font-weight: 600;
+      color: #2d3748;
+    }
+
+    .post-time {
+      font-size: 0.85rem;
+      color: #718096;
+      margin-left: 8px;
+    }
+
+    .post-content {
+      margin: 12px 0;
+      line-height: 1.5;
+    }
+
+    .post-image {
+      width: 100%;
+      border-radius: 8px;
+      background: #e2e8f0;
+      height: 200px;
+      margin: 12px 0;
+    }
+
+    .empty-feed {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06); color: #718096;
+    }
+

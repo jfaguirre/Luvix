@@ -98,7 +98,7 @@ HTML
 
 Base de datos y migraciones
 
-#: Add-Migration Actualizar
+#: Add-Migration PrimeraMigracion
 #: UpDate-DataBase
 
 (localdb)\LOCALHOST_SQLEXPRESS

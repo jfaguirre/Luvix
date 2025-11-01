@@ -1,0 +1,307 @@
+:root {
+  --primary-purple: #6d28d9;
+  --primary-purple-dark: #5b21b6;
+  --primary-purple-darker: #4c1d95;
+  --primary-purple-light: #8b5cf6;
+  --primary-purple-lighter: #a78bfa;
+  --white: #ffffff;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: #f0f2f5; color: #1a202c; }
+
+    
+body {
+  background: var(--gray-100);
+  color: var(--gray-900);
+}
+
+
+/* Navbar */
+.navbar {
+            background-color: var(--primary-purple);
+            color: var(--white);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+       
+        .logo-inner {
+            width: 2.5rem;
+            height: 2.5rem;            
+        }
+
+        .brand {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-icons button {
+  background: var(--primary-purple-dark);
+  border: none;
+  color: var(--white);
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.3s;
+}
+
+.nav-icons button:hover {
+  background: var(--primary-purple-light);
+}
+
+.profile-pic {
+  width: 35px;
+  height: 35px;
+  background: var(--primary-purple-light); /* color del root */
+  border-radius: 50%;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  color: var(--white); 
+  font-size: 18px; 
+}
+
+/* Contenido principal */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 200px ;
+
+  gap: 20px;
+  padding: 20px;
+}
+
+.sidebar-left,
+.sidebar-right {
+  background: var(--white);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+  height: 500px;
+}
+
+/* Modales */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 200;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 24, 39, 0.7);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: var(--white);
+  margin: auto;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  animation: slideDown 0.4s ease;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.modal h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary-purple-dark);
+}
+
+.modal .input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--gray-300);
+  border-radius: 8px;
+  padding: 8px;
+  margin: 12px 0;
+  background: var(--gray-50);
+}
+
+.modal .input-group i {
+  color: var(--primary-purple-dark);
+}
+
+.modal input,
+.modal textarea {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.95rem;
+}
+
+.modal button {
+  background: var(--primary-purple);
+  color: var(--white);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.modal button:hover {
+  background: var(--primary-purple-dark);
+}
+
+.close {
+  float: right;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: var(--primary-purple);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes slideDown {
+  from {transform: translateY(-30px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
+/* Sidebar enlaces */
+.sidebar-left ul,
+.sidebar-right ul {
+  list-style: none;
+  margin-top: 15px;
+}
+
+.sidebar-left ul li a,
+.sidebar-right ul li a {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 6px;
+  color: var(--gray-700);
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.sidebar-left ul li a:hover,
+.sidebar-right ul li a:hover {
+  background: var(--primary-purple-lighter);
+  color: var(--white);
+}
+
+
+
+/* Ocultar menú responsive */
+.nav-responsive-sidebar {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--primary-purple);
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-responsive-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-responsive-sidebar li {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.nav-responsive-sidebar li a,
+.nav-responsive-sidebar li button {
+  display: block;
+  padding: 12px 20px;
+  color: #fff;
+  text-decoration: none;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+}
+
+.nav-responsive-sidebar li a:hover,
+.nav-responsive-sidebar li button:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* Mostrar botón menú solo en responsive */
+.nav-menu-btn {
+  display: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  align-items: center;
+  gap: 8px;
+}
+.texto{
+  color: #fff;
+  text-decoration: none;
+  background: none;
+}
+
+/* Media query responsive */
+@media (max-width: 900px) {
+  .nav-menu-btn {
+    display: flex;
+  }
+
+  .nav-icons,
+  .sidebar-left,
+  .sidebar-right {
+    display: none; /* opcional: esconder otros elementos en mobile */
+  }
+}

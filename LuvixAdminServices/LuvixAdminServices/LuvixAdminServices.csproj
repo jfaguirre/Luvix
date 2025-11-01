@@ -67,6 +67,7 @@
     <Compile Include="frmUsuariosRegistrados.Designer.cs">
       <DependentUpon>frmUsuariosRegistrados.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModelosDTO\MostrarTiendasDTO.cs" />
     <Compile Include="ModelosDTO\MostrarUsuariosDTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -114,6 +115,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="imagenes\logo-white_Mesa de trabajo 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\perfil-ico.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -52,6 +52,56 @@
     ]
   },
   {
+    "ContainingType": "TiendaController",
+    "Method": "CrearTienda",
+    "RelativePath": "api/Tienda/crear-tienda",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "LuvixApiServices.Models.DTOs.CrearTiendaDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 201
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 409
+      }
+    ]
+  },
+  {
+    "ContainingType": "TiendaController",
+    "Method": "ListaTiendas",
+    "RelativePath": "api/Tienda/lista-tiendas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "LuvixApiServices.Controllers.UsuarioController",
     "Method": "UpdateUsuario",
     "RelativePath": "api/Usuario/actualizar-usuario/{id}",
