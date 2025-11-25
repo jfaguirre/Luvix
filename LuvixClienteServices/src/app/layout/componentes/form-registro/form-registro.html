@@ -110,12 +110,12 @@
 
     <div class="form-group">
       <button type="submit" [disabled]="userForm.invalid" class="register-btn">Crear Cuenta</button>
-      @if(userForm.controls['password'].touched) {
+      <!-- @if(userForm.controls['password'].touched) { -->
         <div class="text-danger">
             @if(userForm.invalid) {
               <span style="display: flex; justify-content: center;">Debe llenar todos los campos.</span>
             }
         </div>
-      }
+      <!-- } -->
     </div>
 </form>

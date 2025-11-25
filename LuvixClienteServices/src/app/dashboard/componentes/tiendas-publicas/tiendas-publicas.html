@@ -1,0 +1,35 @@
+<div class="explore-container">
+    <h2 class="section-title">Descubre tiendas</h2>
+
+    <!-- Tienda -->
+
+    @if (loading)
+    {
+      <p>Cargando tiendas...</p>
+    }
+    @else
+    {
+      <div class="stores-grid">
+        <!-- Logo como foto de perfil -->
+        @for (t of tiendas; track t.id) {
+          <div class="store-card">
+
+            <div class="store-banner">
+              <img [src]="t.logo || '/fotos-perfil/default-tienda.jpg'" alt="Logo de {{ t.nombre }}" class="perfil-imagen">
+            </div>
+            <div class="store-info">
+              <div class="store-name">{{ t.nombre }}</div>
+              <div class="store-desc">{{ t.descripcion || 'Sin descripción' }}</div>
+
+              <button class="follow-btn" (click)="toggleSeguir(t)">
+                {{ t.estaSiguiendo ? 'Dejar de seguir' : 'Seguir' }}
+              </button>
+
+            </div>
+          </div>
+        }
+      </div>
+    }
+
+</div>
+

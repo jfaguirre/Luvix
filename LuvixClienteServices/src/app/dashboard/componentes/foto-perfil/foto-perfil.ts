@@ -15,7 +15,7 @@ export class FotoPerfil {
   private http = inject(HttpClient);
   authService = inject(AuthService);
 
-  fotoUrl: string = '/fotos-perfil/default-perfil.jpg';
+  fotoUrl: string = '/fotos-perfil/default.jpg';
 
   // fotoUrl = this.cargarFotoPerfil();
   ngOnInit() {
@@ -57,11 +57,11 @@ export class FotoPerfil {
         // Llama al backend para obtener la foto del usuario
         this.http.get(`http://localhost:5206/api/Usuario/perfil/${userId}`).subscribe({
           next: (response: any) => {
-            this.fotoUrl = `http://localhost:5206${response.fotoUrl}` || '/fotos-perfil/default-perfil.jpg';
+            this.fotoUrl = `http://localhost:5206${response.fotoUrl}` || '/fotos-perfil/default.jpg';
           },
           error: (err) => {
             console.error('Error al cargar la foto de perfil', err);
-            this.fotoUrl = '/fotos-perfil/default-perfil.jpg';
+            this.fotoUrl = '/fotos-perfil/default.jpg';
           }
         });
       } catch (error) {

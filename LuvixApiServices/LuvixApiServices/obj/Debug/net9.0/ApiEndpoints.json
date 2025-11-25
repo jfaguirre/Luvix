@@ -52,6 +52,38 @@
     ]
   },
   {
+    "ContainingType": "LuvixApiServices.Controllers.SeguidorController",
+    "Method": "DejarDeSeguir",
+    "RelativePath": "api/Seguidor/quitar/{idTienda}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idTienda",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LuvixApiServices.Controllers.SeguidorController",
+    "Method": "SeguirTienda",
+    "RelativePath": "api/Seguidor/seguir/{idTienda}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idTienda",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "TiendaController",
     "Method": "CrearTienda",
     "RelativePath": "api/Tienda/crear-tienda",
@@ -93,8 +125,38 @@
   },
   {
     "ContainingType": "TiendaController",
+    "Method": "ListaCategorias",
+    "RelativePath": "api/Tienda/lista-categorias",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TiendaController",
     "Method": "ListaTiendas",
     "RelativePath": "api/Tienda/lista-tiendas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TiendaController",
+    "Method": "ListaTiendasPublicas",
+    "RelativePath": "api/Tienda/tiendas-publicas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TiendaController",
+    "Method": "ObtenerTiendasSeguidas",
+    "RelativePath": "api/Tienda/tiendas-seguidas",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

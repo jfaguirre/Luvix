@@ -72,18 +72,13 @@ export class AuthService {
    */
   isTokenExpired(token: string): boolean {
     try {
-      const payload = JSON.parse(atob(token.split('.')[1])); // Decodifica el payload
-      const exp = payload.exp * 1000; // La fecha de expiración está en segundos → convierte a milisegundos
-      return Date.now() > exp; // Compara con la fecha actual
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      const exp = payload.exp * 1000;
+      return Date.now() > exp;
     } catch {
-      return true; // Si no se puede decodificar, asume que está expirado
+      return true;
     }
   }
-
-  // isLoggedIn(): boolean {
-  //   const token = this.getToken();
-  //   return !!token && !this.isTokenExpired(token);
-  // }
 
   private loggedIn = new BehaviorSubject<boolean>(false);
 

@@ -92,8 +92,7 @@ namespace LuvixApiServices.Controllers
             {
                 return StatusCode(StatusCodes.Status200OK, new { mensaje = "El correo o password ingresado son incorrectos.", token = "" });               
             }
-
-            // Generar token JWT (await porque es async)
+            
             var token = await _utilidades.generarTokenJWT(usuarioEncontrado);
 
             return Ok(new { mensaje = true, token = token });

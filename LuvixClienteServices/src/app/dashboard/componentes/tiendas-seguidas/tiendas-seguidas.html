@@ -1,0 +1,53 @@
+<!-- Tiendas -->
+@if (loading)
+{
+  <p>Cargando...</p>
+}
+@else
+{
+<section class="stores-grid">
+    @for (t of tiendas; track t.id) {
+
+      <div class="store-card">
+
+            <div class="store-banner">
+              <img [src]="t.logo || '/fotos-perfil/default-tienda.jpg'" alt="Logo de {{ t.nombre }}" class="perfil-imagen">
+            </div>
+            <div class="store-info">
+              <div class="store-name">{{ t.nombre }}</div>
+              <div class="store-desc">{{ t.descripcion || 'Sin descripción' }}</div>
+
+              <button class="follow-btn" (click)="dejarDeSeguir(t)">
+                 Dejar de seguir
+              </button>
+
+            </div>
+        </div>
+    }
+</section>
+}
+
+
+<!-- <article class="tienda">
+      <div class="imagen">
+        <img [src]="t.logo || '/fotos-perfil/default-tienda.jpg'" alt="Logo" class="imagen_tienda">
+      </div>
+
+      <div class="contenido">
+          <h5 class="tienda_subcategoria">{{ t.nombre }}</h5>
+          <h3 class="tienda_nombre">{{ t.nombre }}</h3>
+          <p class="tienda_descripcion">{{ t.descripcion || 'Sin descripción' }}</p>
+
+          <button (click)="dejarDeSeguir(t)" class="btn-unfollow">
+              Dejar de seguir
+          </button>
+
+          <div class="reacciones">
+            <div class="reacciones_iconos"><i class="bi bi-star-fill"></i><span>450</span></div>
+            <div class="reacciones_iconos"><i class="bi bi-cursor-fill iconos"></i><span>27</span></div>
+          </div>
+
+      </div>
+    </article> -->
+
+

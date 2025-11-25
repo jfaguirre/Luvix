@@ -1,6 +1,6 @@
 // src/app/layout/componentes/menu/menu.ts
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../../services/auth';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
@@ -13,7 +13,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './menu.css',
 })
 export class Menu {
-
-  // constructor(public authService: AuthService) {}
 
 }

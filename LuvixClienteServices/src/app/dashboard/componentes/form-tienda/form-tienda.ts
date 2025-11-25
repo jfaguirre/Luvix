@@ -1,9 +1,10 @@
-import { CrearUsuarioAPI } from '../../../interface/usuarios.models';
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators, FormBuilder } from '@angular/forms';
-import { UsuarioService } from '../../../services/usuario-services/usuario-service';
 import { Router } from '@angular/router';
-import { apellidoValidator, emailValidator, nombreValidator, passwordlValidator, passwordMatchValidator, maxLengthCustom, minLengthCustom } from '../../../validaciones/validaciones';
+import { nombreValidator, maxLengthCustom, minLengthCustom } from '../../../validaciones/validaciones';
+import { CrearTiendaAPI } from '../../../interface/tienda.models';
+import { TiendaServices } from '../../../services/tienda-services/tienda-services';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -13,65 +14,65 @@ import { apellidoValidator, emailValidator, nombreValidator, passwordlValidator,
   styleUrl: './form-tienda.css',
   standalone: true
 })
+
 export class FormTienda {
 
-   private readonly formBuilder = inject(FormBuilder);
-  usuarioService = inject(UsuarioService);
-  router = inject(Router);
+  categorias: any[] = [];
+  control: any;
 
-  userForm: FormGroup = new FormGroup({
+  constructor(private http: HttpClient) {}
 
-      nombre: new FormControl("", [
-        Validators.required,
-        minLengthCustom(3),
-        maxLengthCustom(50),
-        nombreValidator()]),
-
-      apellido: new FormControl("", [
-        Validators.required,
-        minLengthCustom(3),
-        maxLengthCustom(50),
-        apellidoValidator()]),
-
-      genero: new FormControl("", [
-        Validators.required]),
-
-      email: new FormControl("", [
-        Validators.required,
-        Validators.maxLength(255),
-        Validators.minLength(3),
-        Validators.email,
-        emailValidator()]),
-
-      password: new FormControl("", [
-        Validators.required,
-        Validators.maxLength(255),
-        Validators.minLength(8),
-        passwordlValidator()]),
-
-      password_confirmacion: new FormControl("", [
-        Validators.required])
-  }, { validators: passwordMatchValidator()});
-
-
-  guardarCambio()
-  {
-    const formValue = this.userForm.value;
-
-    const usuario: CrearUsuarioAPI = {
-      nombre: formValue.nombre,
-      apellido: formValue.apellido,
-      genero: formValue.genero,
-      email: formValue.email,
-      password: formValue.password
-      };
-
-    this.usuarioService.crear(usuario).subscribe({
-      next: () => {
-        this.router.navigate(['/sesion']);
+  ngOnInit() {
+    this.http.get<any>('http://localhost:5206/api/Tienda/lista-categorias').subscribe({
+      next: (response) => {
+        this.categorias = response.value;
       },
       error: (err) => {
-        console.error('Error al crear usuario:', err);
+        console.error('Error al cargar categorías', err);
+      }
+    });
+  }
+
+  private readonly formBuilder = inject(FormBuilder);
+  tiendaService = inject(TiendaServices);
+  router = inject(Router);
+
+  tiendaForm: FormGroup = new FormGroup({
+
+          idCategoria: new FormControl("", [
+          Validators.required,
+          ]),
+
+          nombre: new FormControl("", [
+          Validators.required,
+          minLengthCustom(3),
+          maxLengthCustom(50),
+          nombreValidator()]),
+
+          descripcion: new FormControl ("", [
+          Validators.required,
+          minLengthCustom(20),
+          maxLengthCustom(150)
+
+          ])
+  });
+
+  CrearTienda()
+  {
+    const formValue = this.tiendaForm.value;
+
+    const tienda: CrearTiendaAPI = {
+      idCategoria: formValue.idCategoria,
+      nombre: formValue.nombre,
+      descripcion: formValue.descripcion
+    };
+
+    this.tiendaService.crear(tienda).subscribe({
+      next: () => {
+        this.router.navigate(['/dashboard/perfil']);
+      },
+      error: (err) => {
+        console.error('Error al crear la tienda:', err);
       }
     });
   }

@@ -14,69 +14,7 @@
 
 .tiendas_favoritas-grid {
   width: 70%;
-  margin: 0 auto;
-  display: grid;
-  column-gap: 20px;
-  row-gap: 40px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin: 20px auto;
 
 }
-
-.tiendas_favoritas-grid .tienda {
-
-  height: 150px;
-  display: flex;
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
-/*
-.tienda .contenido .tienda_subcategoria {
-
-} */
-
-.tienda .contenido .tienda_nombre {
-  font-size: 1.2rem;
-}
-
-.tienda .contenido .tienda_descripcion {
-  font-size: .7rem;
-}
-
-.tienda .imagen img {
-  width: 150px;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  border-top-left-radius: 0.75rem;
-  border-bottom-left-radius: 0.75rem;
-}
-
-.tienda .reacciones {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 10px;
-  margin-top: 3px;
-}
-
-.tienda .reacciones .reacciones_iconos {
-  display: flex;
-  gap: 7px;
-}
-
-.tienda .contenido {
-  width: 100%;
-  padding: 10px;
-}
-
-.tienda .contenido .tienda_descripcion {
-
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-
 

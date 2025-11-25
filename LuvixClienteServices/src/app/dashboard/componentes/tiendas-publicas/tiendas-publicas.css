@@ -1,0 +1,78 @@
+.explore-container {
+
+  width: 70%;
+  padding: 20px;
+  margin: 20px auto;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 24px; color: #2d3748;
+}
+
+.stores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.store-card {
+  background: white;
+  border-radius: 12px; overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+
+.store-card:hover {
+  transform: translateY(-4px);
+}
+
+.store-banner {
+  height: 100px;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, var(--primary-purple), var(--primary-purple-darker));
+}
+
+.store-info {
+  padding: 16px;
+  text-align: center;
+}
+
+.store-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.store-desc {
+
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.follow-btn {
+  padding: 8px 16px;
+  background: #e0e7ff;
+  color: #4f46e5;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.follow-btn:hover {
+  background: #c7d2fe;
+}
