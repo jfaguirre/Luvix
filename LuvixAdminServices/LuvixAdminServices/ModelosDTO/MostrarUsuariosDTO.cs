@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 // MostrarUsuariosDTO.cs
 namespace LuvixAdminServices.ModelosDTO
 {
-    public class MostrarUsuariosDTO // Cambiado de 'internal' a 'public'
+    public class MostrarUsuariosDTO 
     {
         public int Id { get; set; }
         public string Nombre { get; set; }

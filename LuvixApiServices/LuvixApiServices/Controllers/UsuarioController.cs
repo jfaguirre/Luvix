@@ -125,7 +125,7 @@ namespace LuvixApiServices.Controllers
         public async Task<IActionResult> SubirFoto(IFormFile file)
         {
             var token = HttpContext.Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
-            var userId = ObtenerIdDesdeToken(token); // Necesitamos esta función
+            var userId = ObtenerIdDesdeToken(token); 
 
             if (userId == 0 || file == null || file.Length == 0)
                 return BadRequest(new { mensaje = "Datos inválidos." });

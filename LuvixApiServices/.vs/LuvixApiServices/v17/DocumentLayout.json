@@ -3,68 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|c:\\users\\usuario\\documents\\github\\luvix\\luvixapiservices\\luvixapiservices\\controllers\\tiendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|solutionrelative:luvixapiservices\\controllers\\tiendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|c:\\users\\usuario\\documents\\github\\luvix\\luvixapiservices\\luvixapiservices\\models\\dtos\\mostrartiendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|solutionrelative:luvixapiservices\\models\\dtos\\mostrartiendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|c:\\users\\usuario\\documents\\github\\luvix\\luvixapiservices\\luvixapiservices\\models\\dtos\\mostrarusuariosdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|solutionrelative:luvixapiservices\\models\\dtos\\mostrarusuariosdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|c:\\users\\usuario\\documents\\github\\luvix\\luvixapiservices\\luvixapiservices\\models\\dtos\\creartiendadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|solutionrelative:luvixapiservices\\models\\dtos\\creartiendadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|c:\\users\\usuario\\documents\\github\\luvix\\luvixapiservices\\luvixapiservices\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|solutionrelative:luvixapiservices\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|c:\\users\\usuario\\documents\\github\\luvix\\luvixapiservices\\luvixapiservices\\models\\dtos\\request\\validacionesusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|solutionrelative:luvixapiservices\\models\\dtos\\request\\validacionesusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|c:\\users\\usuario\\documents\\github\\luvix\\luvixapiservices\\luvixapiservices\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|solutionrelative:luvixapiservices\\controllers\\accesocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|c:\\users\\usuario\\documents\\github\\luvix\\luvixapiservices\\luvixapiservices\\models\\dtos\\request\\validacionestienda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|solutionrelative:luvixapiservices\\models\\dtos\\request\\validacionestienda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|c:\\users\\usuario\\documents\\github\\luvix\\luvixapiservices\\luvixapiservices\\models\\tienda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|solutionrelative:luvixapiservices\\models\\tienda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|c:\\users\\usuario\\documents\\github\\luvix\\luvixapiservices\\luvixapiservices\\models\\dtos\\crearusuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|solutionrelative:luvixapiservices\\models\\dtos\\crearusuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|c:\\users\\usuario\\documents\\github\\luvix\\luvixapiservices\\luvixapiservices\\models\\subcategoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|solutionrelative:luvixapiservices\\models\\subcategoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|c:\\users\\usuario\\documents\\github\\luvix\\luvixapiservices\\luvixapiservices\\models\\categoriatienda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|solutionrelative:luvixapiservices\\models\\categoriatienda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|c:\\users\\usuario\\documents\\github\\luvix\\luvixapiservices\\luvixapiservices\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|solutionrelative:luvixapiservices\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|c:\\users\\usuario\\documents\\github\\luvix\\luvixapiservices\\luvixapiservices\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|solutionrelative:luvixapiservices\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|c:\\users\\usuario\\documents\\github\\luvix\\luvixapiservices\\luvixapiservices\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|solutionrelative:luvixapiservices\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|c:\\users\\usuario\\documents\\github\\luvix\\luvixapiservices\\luvixapiservices\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|solutionrelative:luvixapiservices\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|c:\\users\\usuario\\documents\\github\\luvix\\luvixapiservices\\luvixapiservices\\models\\dtos\\mostrartiendapublicadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D0E5F75-0D05-4C53-A631-EC85DF2B1EF7}|LuvixApiServices\\LuvixApiServices.csproj|solutionrelative:luvixapiservices\\models\\dtos\\mostrartiendapublicadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -82,196 +26,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MostrarUsuariosDTO.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Models\\DTOs\\MostrarUsuariosDTO.cs",
-              "RelativeDocumentMoniker": "LuvixApiServices\\Models\\DTOs\\MostrarUsuariosDTO.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Models\\DTOs\\MostrarUsuariosDTO.cs",
-              "RelativeToolTip": "LuvixApiServices\\Models\\DTOs\\MostrarUsuariosDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T20:39:18.841Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MostrarTiendas.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Models\\DTOs\\MostrarTiendas.cs",
-              "RelativeDocumentMoniker": "LuvixApiServices\\Models\\DTOs\\MostrarTiendas.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Models\\DTOs\\MostrarTiendas.cs",
-              "RelativeToolTip": "LuvixApiServices\\Models\\DTOs\\MostrarTiendas.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T20:38:24.666Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TiendaController.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Controllers\\TiendaController.cs",
-              "RelativeDocumentMoniker": "LuvixApiServices\\Controllers\\TiendaController.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Controllers\\TiendaController.cs",
-              "RelativeToolTip": "LuvixApiServices\\Controllers\\TiendaController.cs",
-              "ViewState": "AgIAAFQAAAAAAAAAAADwv1sAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T20:15:37.34Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "CrearUsuarioDTO.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Models\\DTOs\\CrearUsuarioDTO.cs",
-              "RelativeDocumentMoniker": "LuvixApiServices\\Models\\DTOs\\CrearUsuarioDTO.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Models\\DTOs\\CrearUsuarioDTO.cs",
-              "RelativeToolTip": "LuvixApiServices\\Models\\DTOs\\CrearUsuarioDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T20:06:14.647Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CrearTiendaDTO.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Models\\DTOs\\CrearTiendaDTO.cs",
-              "RelativeDocumentMoniker": "LuvixApiServices\\Models\\DTOs\\CrearTiendaDTO.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Models\\DTOs\\CrearTiendaDTO.cs",
-              "RelativeToolTip": "LuvixApiServices\\Models\\DTOs\\CrearTiendaDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T20:06:10.534Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ValidacionesTienda.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Models\\DTOs\\Request\\ValidacionesTienda.cs",
-              "RelativeDocumentMoniker": "LuvixApiServices\\Models\\DTOs\\Request\\ValidacionesTienda.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Models\\DTOs\\Request\\ValidacionesTienda.cs",
-              "RelativeToolTip": "LuvixApiServices\\Models\\DTOs\\Request\\ValidacionesTienda.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T20:03:58.914Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ValidacionesUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Models\\DTOs\\Request\\ValidacionesUsuario.cs",
-              "RelativeDocumentMoniker": "LuvixApiServices\\Models\\DTOs\\Request\\ValidacionesUsuario.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Models\\DTOs\\Request\\ValidacionesUsuario.cs",
-              "RelativeToolTip": "LuvixApiServices\\Models\\DTOs\\Request\\ValidacionesUsuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T19:56:59.987Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "SubCategoria.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Models\\SubCategoria.cs",
-              "RelativeDocumentMoniker": "LuvixApiServices\\Models\\SubCategoria.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Models\\SubCategoria.cs",
-              "RelativeToolTip": "LuvixApiServices\\Models\\SubCategoria.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T19:03:19.509Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "CategoriaTienda.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Models\\CategoriaTienda.cs",
-              "RelativeDocumentMoniker": "LuvixApiServices\\Models\\CategoriaTienda.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Models\\CategoriaTienda.cs",
-              "RelativeToolTip": "LuvixApiServices\\Models\\CategoriaTienda.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T19:02:59.445Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Program.cs",
-              "RelativeDocumentMoniker": "LuvixApiServices\\Program.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Program.cs",
-              "RelativeToolTip": "LuvixApiServices\\Program.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T18:48:17.013Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "AccesoController.cs",
               "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Controllers\\AccesoController.cs",
               "RelativeDocumentMoniker": "LuvixApiServices\\Controllers\\AccesoController.cs",
               "ToolTip": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Controllers\\AccesoController.cs",
               "RelativeToolTip": "LuvixApiServices\\Controllers\\AccesoController.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAABcAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T18:45:07.181Z"
+              "WhenOpened": "2025-11-06T15:27:50.656Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\appsettings.json",
-              "RelativeDocumentMoniker": "LuvixApiServices\\appsettings.json",
-              "ToolTip": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\appsettings.json",
-              "RelativeToolTip": "LuvixApiServices\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-28T18:43:33.262Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "LuvixApiServices\\appsettings.Development.json",
-              "ToolTip": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\appsettings.Development.json",
-              "RelativeToolTip": "LuvixApiServices\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-28T18:43:28.942Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Tienda.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Models\\Tienda.cs",
-              "RelativeDocumentMoniker": "LuvixApiServices\\Models\\Tienda.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Models\\Tienda.cs",
-              "RelativeToolTip": "LuvixApiServices\\Models\\Tienda.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAxAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "MostrarTiendaPublicaDTO.cs",
+              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Models\\DTOs\\MostrarTiendaPublicaDTO.cs",
+              "RelativeDocumentMoniker": "LuvixApiServices\\Models\\DTOs\\MostrarTiendaPublicaDTO.cs",
+              "ToolTip": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Models\\DTOs\\MostrarTiendaPublicaDTO.cs",
+              "RelativeToolTip": "LuvixApiServices\\Models\\DTOs\\MostrarTiendaPublicaDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T01:49:43.554Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Context\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "LuvixApiServices\\Context\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Context\\AppDbContext.cs",
-              "RelativeToolTip": "LuvixApiServices\\Context\\AppDbContext.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-28T01:49:38.057Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UsuarioController.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Controllers\\UsuarioController.cs",
-              "RelativeDocumentMoniker": "LuvixApiServices\\Controllers\\UsuarioController.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Documents\\GitHub\\Luvix\\LuvixApiServices\\LuvixApiServices\\Controllers\\UsuarioController.cs",
-              "RelativeToolTip": "LuvixApiServices\\Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACUAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T03:42:07.318Z"
+              "WhenOpened": "2025-11-06T00:16:20.546Z"
             }
           ]
         }

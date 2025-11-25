@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth-guard';
 import { PUBLIC_ROUTES } from './layout/layout.routes';
 import { DASHBOARD_ROUTES } from './dashboard/dashboard.routes';
+import { TIENDA_ROUTES } from './tienda/tienda.routes';
 
 export const routes: Routes = [
 
@@ -19,6 +20,14 @@ export const routes: Routes = [
     loadComponent: () => import('./dashboard/dashboard').then(c => c.Dashboard),
     canActivate: [AuthGuard],
     children: DASHBOARD_ROUTES
+  },
+
+  // Rutas privadas (Dashboard)
+  {
+    path: 'tienda',
+    loadComponent: () => import('./tienda/tienda').then(c => c.Tienda),
+    canActivate: [AuthGuard],
+    children: TIENDA_ROUTES
   },
 
   // Redirección

@@ -96,13 +96,13 @@ public class TiendaController : ControllerBase
     public async Task<IActionResult> ListaTiendas()
     {
         var lista = await _AppDbContext.Tiendas
-            .Include(t => t.Usuario)           // Incluye el usuario que creó la tienda
-            .Include(t => t.Categoria)         // Incluye la categoría de la tienda
+            .Include(t => t.Usuario)           
+            .Include(t => t.Categoria)         
             .Select(t => new MostrarTiendas
             {
                 Id = t.Id,
                 NombreCategoria = t.Categoria.Nombre,           
-                nombreUsuario = t.Usuario.Nombre + " " + t.Usuario.Apellido, // Nombre completo del usuario
+                nombreUsuario = t.Usuario.Nombre + " " + t.Usuario.Apellido,
                 NombreTienda = t.Nombre,
                 Descripcion = t.Descripcion ?? "",              
                 Estado = t.Estado,
@@ -111,6 +111,71 @@ public class TiendaController : ControllerBase
             .ToListAsync();
 
         return Ok(new { value = lista });
+    }
+
+    // GET
+    [HttpGet("lista-categorias")]
+    public async Task<IActionResult> ListaCategorias()
+    {
+        var categorias = await _AppDbContext.CategoriasTienda
+            .Select(c => new CategoriaTiendaDTO
+            {
+                Id = c.Id,
+                Nombre = c.Nombre
+            })
+            .ToListAsync();
+
+        return Ok(new { value = categorias });
+    }
+
+    // GET: api/Tienda/tiendas-publicas
+    [HttpGet("tiendas-publicas")]
+    public async Task<IActionResult> ListaTiendasPublicas()
+    {
+        var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+        int? usuarioId = null;
+
+        if (userIdClaim != null && int.TryParse(userIdClaim.Value, out int id))
+        {
+            usuarioId = id;
+        }
+
+        var tiendas = await _AppDbContext.Tiendas
+            .Select(t => new MostrarTiendaPublicaDTO
+            {
+                Id = t.Id,
+                Nombre = t.Nombre,
+                Descripcion = t.Descripcion,
+                Logo = t.Logo, 
+                EstaSiguiendo = usuarioId.HasValue &&
+                               t.SeguidoresUsuarios.Any(s => s.IdUsuario == usuarioId.Value)
+            })
+            .ToListAsync();
+
+        return Ok(new { value = tiendas });
+    }
+
+    // GET: api/Tienda/tiendas-seguidas
+    [HttpGet("tiendas-seguidas")]
+    [Authorize]
+    public async Task<IActionResult> ObtenerTiendasSeguidas()
+    {
+        var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+        if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int idUsuario))
+            return Unauthorized();
+
+        var tiendasSeguidas = await _AppDbContext.SeguidoresUsuarioATienda
+            .Where(s => s.IdUsuario == idUsuario)
+            .Select(s => new TiendaSeguidaDTO
+            {
+                Id = s.IdTienda,
+                Nombre = s.Tienda.Nombre,
+                Descripcion = s.Tienda.Descripcion,
+                Logo = s.Tienda.Logo
+            })
+            .ToListAsync();
+
+        return Ok(new { value = tiendasSeguidas });
     }
 
 }
